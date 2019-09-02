@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     public CollisionManager collisionManager;
     public DamageManager damageManager;
+    public TimeManager timeManager;
+    public SharedValue sharedValue;
 
     virtual protected void Awake()
     {
@@ -58,5 +60,6 @@ public class GameManager : MonoBehaviour
     {
         collisionManager.UpdateByFrame();
         damageManager.UpdateByFrame();
+        timeManager.UpdateByFrame();
     }
 }
