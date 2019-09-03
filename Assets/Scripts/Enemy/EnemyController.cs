@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
-    public enum MoveType {
+    public enum MoveType
+    {
         Round,
         SkyStraight
     }
@@ -25,13 +26,16 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         time = 0;
-        if (moveType == MoveType.Round) {
-            currentEnemyMover = new RoundEnemyMover(gameObject,speed);
+        if (moveType == MoveType.Round)
+        {
+            currentEnemyMover = new RoundEnemyMover(gameObject, speed);
             currentEnemyMover.OnEnter();
-        } else if (moveType==MoveType.SkyStraight) {
+        }
+        else if (moveType == MoveType.SkyStraight)
+        {
 
         }
-        
+
     }
 
     // Update is called once per frame
@@ -39,4 +43,10 @@ public class EnemyController : MonoBehaviour
     {
         currentEnemyMover.OnUpdate();
     }
+
+    public virtual void OnTriggerEnter2D(Collider2D collider)
+    {
+        
+    }
+
 }
