@@ -54,13 +54,14 @@ public abstract class BulletBace : MonoBehaviour
             GameManager.Instance.collisionManager.CollisionBulletToPlayer(player, this);
             return;
         }
-        */
 
+        */
         var enemy = collider.gameObject.GetComponent<EnemyController>();
         if (enemy != null && group == Group.Player)
         {
             GameManager.Instance.collisionManager.CollisionBulletToEnemy(enemy);
             return;
+
         }
     }
 }
