@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PrayerController : MonoBehaviour
 {
+    [SerializeField] private int hp;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +24,15 @@ public class PrayerController : MonoBehaviour
         {
             //GameManager.Instance.collisionManager.CollisionPlayerToEnemy(enemy);
         }
+    }
+
+    public int GetHp()
+    {
+        return hp;
+    }
+
+    public void HitEnemy(int damage)
+    {
+        hp -= damage;
     }
 }

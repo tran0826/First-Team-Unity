@@ -35,4 +35,8 @@ public class BulletController : MonoBehaviour
     {
         
     }
+    public void CreateBullet(BulletType type)
+    {
+        
+    }
 }
