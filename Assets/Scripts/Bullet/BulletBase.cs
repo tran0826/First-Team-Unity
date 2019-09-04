@@ -7,7 +7,7 @@ public enum Group
     Enemy
 }
 
-public abstract class BulletBace : MonoBehaviour
+public abstract class BulletBase : MonoBehaviour
 {
     [SerializeField]
     private int power;
