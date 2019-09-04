@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
     public DamageManager damageManager;
     public TimeManager timeManager;
     public SharedValue sharedValue;
+    public TowerManager towerManager;
+    public DestroyManager destroyManager;
+    
+
 
     virtual protected void Awake()
     {
@@ -60,6 +64,8 @@ public class GameManager : MonoBehaviour
     {
         collisionManager.UpdateByFrame();
         damageManager.UpdateByFrame();
+        destroyManager.UpdateByFrame();
         timeManager.UpdateByFrame();
+//        towerManager.UpdateByFrame();
     }
 }
