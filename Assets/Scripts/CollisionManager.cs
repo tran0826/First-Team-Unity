@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
 {
-
+    private List<EnemyPlayerPair> enemyPlayerCoList = new List<EnemyPlayerPair>();
     private List<EnemyBulletPair> enemyBulletCoList = new List<EnemyBulletPair>();
 
     private DamageManager damageManager;
@@ -18,31 +18,42 @@ public class CollisionManager : MonoBehaviour
     {
 
 
-
-
+        damageManager.SetCoList(enemyBulletCoList, enemyPlayerCoList);
         ResetCoList();
     }
 
     private void ResetCoList()
     {
+        enemyPlayerCoList.Clear();
         enemyBulletCoList.Clear();
     }
 
     //敵と弾の衝突時に呼び出し
-    public void CollisionBulletToEnemy(EnemyController enemy)
+    public void CollisionBulletToEnemy(EnemyController enemy,BulletBase bullet)
     {
-        EnemyBulletPair pair = new EnemyBulletPair(enemy);
+        EnemyBulletPair pair = new EnemyBulletPair(enemy,bullet);
         enemyBulletCoList.Add(pair);
+    }
+}
+
+public class EnemyPlayerPair
+{
+    public EnemyController enemy;
+    
+    public EnemyPlayerPair(EnemyController enemy)
+    {
+        this.enemy = enemy;
     }
 }
 
 public class EnemyBulletPair
 {
     public EnemyController enemy;
-//    public BulletBase bullet;
+    public BulletBase bullet;
 
-    public EnemyBulletPair(EnemyController enemy)
+    public EnemyBulletPair(EnemyController enemy,BulletBase bullet)
     {
         this.enemy = enemy;
+        this.bullet = bullet;
     }
 }
