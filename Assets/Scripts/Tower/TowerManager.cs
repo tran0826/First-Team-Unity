@@ -4,13 +4,56 @@ using UnityEngine;
 
 public class TowerManager : MonoBehaviour
 {
+    
+    private HashSet<GameObject> TowerUnits = new HashSet<GameObject>();
+    private Queue<GameObject> bornQueue = new Queue<GameObject>();
+    private Queue<GameObject> deadQueue = new Queue<GameObject>();
 
-    private float time;
+    public void Born(List<GameObject> borns)
+    {
+        foreach (var born in borns)
+        {
+            Born(born);
+        }
+    }
+    public void Born(GameObject born)
+    {
+        if (born.GetComponent<TowerController>() != null)
+        {
+            bornQueue.Enqueue(born);
+        }
+    }
 
-    private int totalNum = 1;
-    private int currentNum = 0;
-    private List<TowerBase> towerList = new List<TowerBase>();
-  
+    public void Kill(List<GameObject> kills)
+    {
+        foreach (var kill in kills)
+        {
+            Kill(kill);
+        }
+    }
+    public void Kill(GameObject kill)
+    {
+        if (kill.GetComponent<TowerController>())
+        {
+            deadQueue.Enqueue(kill);
+        }
+    }
+
+    private void BornQueueProcess()
+    {
+        while (0 < bornQueue.Count)
+        {
+            TowerUnits.Add(bornQueue.Dequeue());
+        }
+    }
+    private void KillQueueProcess()
+    {
+        while (0 < deadQueue.Count)
+        {
+            TowerUnits.Remove(deadQueue.Dequeue());
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,24 +69,8 @@ public class TowerManager : MonoBehaviour
 
     public void UpdateByFrame()
     {
+        BornQueueProcess();
+        KillQueueProcess();
     }
-
-
-    /*
-  
-
-    
-    public void CreateTower(TowerBase tower) {
-        if (currentNum < totalNum)
-        {
-            towerList.Add(tower);
-            currentNum++;
-        }
-        else {
-            Destroy(tower);
-        }
-    }
-    */
-
 
 }
