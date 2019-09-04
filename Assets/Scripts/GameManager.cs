@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public DestroyManager destroyManager;
     public EnemyManager enemyManager;
     public PlayerManager playerManager;
+    public PhaseManager phaseManager;
     
 
 
@@ -58,12 +59,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        //phaseManager.Initialize();
+        phaseManager.Initialize();
     }
 
     // Update is called once per frame
     private void Update()
     {
+        phaseManager.UpdateByFrame();
         collisionManager.UpdateByFrame();
         damageManager.UpdateByFrame();
         destroyManager.UpdateByFrame();

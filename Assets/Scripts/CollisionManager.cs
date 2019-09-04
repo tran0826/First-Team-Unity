@@ -45,10 +45,12 @@ public class CollisionManager : MonoBehaviour
 public class EnemyPlayerPair
 {
     public EnemyController enemy;
+    public PlayerController player;
     
-    public EnemyPlayerPair(EnemyController enemy)
+    public EnemyPlayerPair(EnemyController enemy,PlayerController player)
     {
         this.enemy = enemy;
+        this.player = player;
     }
 }
 

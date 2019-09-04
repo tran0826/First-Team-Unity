@@ -49,7 +49,9 @@ public class DamageManager : MonoBehaviour
         if (enemyPlayerCoList.Count == 0) return;
         foreach(EnemyPlayerPair pair in enemyPlayerCoList)
         {
-
+            int enemyPower = pair.enemy.GetPower();
+            PlayerDamaged(pair.player);
+            EnemyDead(pair.enemy);
         }
         enemyPlayerCoList.Clear();
     }
@@ -75,6 +77,11 @@ public class DamageManager : MonoBehaviour
             
         }
         enemyBulletCoList.Clear();
+    }
+
+    private void PlayerDamaged(PlayerController player,int damage)
+    {
+        
     }
 
     private void EnemyDead(EnemyController enemy)
