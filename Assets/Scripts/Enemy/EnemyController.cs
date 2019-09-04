@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
         {
             currentEnemyMover.OnUpdate();
         }
-        time += (float)GameManager.Instance.timeManager.DeltaTime();
+        //time += (float)GameManager.Instance.timeManager.DeltaTime();
     }
 
     public void HitBullet(int damage)
