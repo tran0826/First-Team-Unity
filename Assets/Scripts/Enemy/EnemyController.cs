@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     private float time;
     [SerializeField] private int hp;
     [SerializeField] private int experience;
+    [SerializeField] private int power;
 
     private IEnemyMover currentEnemyMover = null;
 
@@ -50,6 +51,14 @@ public class EnemyController : MonoBehaviour
 
     public int GetHp() {
         return hp;
+    }
+    public int GetExperience()
+    {
+        return experience;
+    }
+    public int GetPower()
+    {
+        return power;
     }
 
     public void HitBullet(int damage)
