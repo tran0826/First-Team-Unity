@@ -6,10 +6,7 @@ public class TowerManager : MonoBehaviour
 {
 
     private float time;
-    [SerializeField] private int hp;
-    [SerializeField] private int experience;
-    private float interval;
-    private int power;
+
     private int totalNum = 1;
     private int currentNum = 0;
     private List<TowerBase> towerList = new List<TowerBase>();
@@ -27,18 +24,13 @@ public class TowerManager : MonoBehaviour
        
     }
 
-    public float GetInterval() {
-        return interval;
-    }
-    public float GetPower()
+    public void UpdateByFrame()
     {
-        return power;
     }
 
+
     /*
-    public void LevelUp() {
-        
-    }
+  
 
     
     public void CreateTower(TowerBase tower) {
@@ -53,13 +45,5 @@ public class TowerManager : MonoBehaviour
     }
     */
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        var enemy = collision.gameObject.GetComponent<EnemyController>();
-        if (enemy != null)
-        {
-            hp--;//
-            //GameManager.Instance.collisionManager.CollisionPlayerToEnemy(enemy);
-        }
-    }
+
 }
