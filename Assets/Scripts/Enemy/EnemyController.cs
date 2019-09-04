@@ -41,7 +41,16 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentEnemyMover.OnUpdate();
+        if (currentEnemyMover != null)
+        {
+            currentEnemyMover.OnUpdate();
+        }
+        time += (float)GameManager.Instance.timeManager.DeltaTime();
+    }
+
+    public void HitBullet(int damage)
+    {
+        hp -= damage;
     }
 
     public virtual void OnTriggerEnter2D(Collider2D collider)
