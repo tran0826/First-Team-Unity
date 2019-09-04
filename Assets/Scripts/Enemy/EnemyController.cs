@@ -48,6 +48,10 @@ public class EnemyController : MonoBehaviour
         //time += (float)GameManager.Instance.timeManager.DeltaTime();
     }
 
+    public int GetHp() {
+        return hp;
+    }
+
     public void HitBullet(int damage)
     {
         hp -= damage;
