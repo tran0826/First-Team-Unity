@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] private int hp;
+    
     [SerializeField] private int experience;
     private float interval;
     private int power;
@@ -34,10 +34,7 @@ public class PlayerManager : MonoBehaviour
     {
         return power;
     }
-    public int GetHp()
-    {
-        return hp;
-    }
+    
     public int GetTotal() {
         return total;
     }
@@ -49,12 +46,5 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        var enemy = collision.gameObject.GetComponent<EnemyController>();
-        if (enemy != null)
-        {
-            //GameManager.Instance.collisionManager.CollisionPlayerToEnemy(enemy);
-        }
-    }
+
 }
