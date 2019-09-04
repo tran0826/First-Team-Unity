@@ -55,12 +55,37 @@ public class DamageManager : MonoBehaviour
     private void ExecEnemyBulletProcess()
     {
         if (enemyBulletCoList.Count == 0) return;
-        foreach(EnemyBulletPair pair in enemyBulletCoList)
+        foreach (EnemyBulletPair pair in enemyBulletCoList)
         {
+            int bulletPower = pair.bullet.Power;
 
-
-
+            DisplayHitEffect(pair.bullet.transform.position);
+            if (pair.bullet.CanDestroyOnCollision)
+            {
+                destroyManager.AddDestroyList(pair.bullet.gameObject);
+            }
+            pair.enemy.HitBullet(bulletPower);
+            /*
+            if (pair.enemy.getHP() <= 0)
+            {
+                EnemyDead(enemy);
+            }
+            */
         }
         enemyBulletCoList.Clear();
     }
+
+    private void EnemyDead(EnemyController enemy)
+    {
+ //       towerManager.Kill(enemy.gameObject);
+  //      enemy.DeadOnRule();
+        destroyManager.AddDestroyList(enemy.gameObject);
+    }
+
+    private void DisplayHitEffect(Vector3 pos)
+    {
+
+    }
+
+
 }

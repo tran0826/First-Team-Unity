@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public SharedValue sharedValue;
     public TowerManager towerManager;
     public DestroyManager destroyManager;
+    public EnemyManager enemyManager;
+    public PlayerManager playerManager;
     
 
 
@@ -66,6 +68,8 @@ public class GameManager : MonoBehaviour
         damageManager.UpdateByFrame();
         destroyManager.UpdateByFrame();
         timeManager.UpdateByFrame();
-//        towerManager.UpdateByFrame();
+        towerManager.UpdateByFrame();
+        enemyManager.UpdateByFrame();
+        playerManager.UpdateByFrame();
     }
 }
