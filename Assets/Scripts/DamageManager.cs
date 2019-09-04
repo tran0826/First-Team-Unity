@@ -9,7 +9,8 @@ public class DamageManager : MonoBehaviour
     private Queue<EnemyPlayerPair> enemyPlayerCoList = new Queue<EnemyPlayerPair>();
 
     DestroyManager destroyManager;
-    TowerManager towerManager;
+    EnemyManager enemyManager;
+    PlayerManager playerManager;
 
     SharedValue sharedValue;
 
@@ -17,7 +18,8 @@ public class DamageManager : MonoBehaviour
     private void Awake()
     {
         destroyManager = GameManager.Instance.destroyManager;
-        towerManager = GameManager.Instance.towerManager;
+        enemyManager = GameManager.Instance.enemyManager;
+        playerManager = GameManager.Instance.playerManager;
         sharedValue = GameManager.Instance.sharedValue;
 
     }
@@ -65,20 +67,19 @@ public class DamageManager : MonoBehaviour
                 destroyManager.AddDestroyList(pair.bullet.gameObject);
             }
             pair.enemy.HitBullet(bulletPower);
-            /*
-            if (pair.enemy.getHP() <= 0)
+            
+            if (pair.enemy.GetHp() <= 0)
             {
-                EnemyDead(enemy);
+                EnemyDead(pair.enemy);
             }
-            */
+            
         }
         enemyBulletCoList.Clear();
     }
 
     private void EnemyDead(EnemyController enemy)
     {
- //       towerManager.Kill(enemy.gameObject);
-  //      enemy.DeadOnRule();
+        enemyManager.Kill(enemy.gameObject);
         destroyManager.AddDestroyList(enemy.gameObject);
     }
 
