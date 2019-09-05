@@ -30,7 +30,7 @@ public abstract class BulletBase : MonoBehaviour
         UpdateRotation();
 
     }
-    public abstract void Initialize(float ratio);
+    public abstract void Initialize(int power,Vector3 targetPos);
 
     private void UpdateRotation()
     {

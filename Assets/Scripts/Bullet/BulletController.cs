@@ -6,8 +6,6 @@ public class BulletController : MonoBehaviour
 {
     [SerializeField]
     private GameObject bulletPrefab;
-    //[SerializeField]
-    //private PowerType powerType;
     [SerializeField]
     private float maxInterval;
     [SerializeField]
