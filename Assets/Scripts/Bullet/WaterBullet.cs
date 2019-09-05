@@ -15,8 +15,10 @@ public class WaterBullet : BulletBase
     {
         
     }
-    public override void Initialize(float ratio) {
-        //
+    public override void Initialize(int power,Vector3 targetPos) {
+        float angle = Vector3.Angle(this.transform.position,targetPos);
+        transform.RotateAround(this.transform.position,this.transform.forward,angle);
+
     }
     public override void Move() {
         //

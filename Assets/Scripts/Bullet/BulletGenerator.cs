@@ -6,6 +6,7 @@ public class BulletGenerator : MonoBehaviour
 {
     private List<Transform[]> eachBulletPositions = new List<Transform[]>();
     private GameObject targetEnemy;
+    private Vector3 targetPos;  
     private float interval;
     private int power;
     private float time;
@@ -15,8 +16,8 @@ public class BulletGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        interval = GameManager.Instance.playerManager.GetInterval();
-        power = GameManager.Instance.playerManager.GetPower();
+        interval = GameManager.Instance.playerManager.Interval;
+        power = GameManager.Instance.playerManager.Power;
         time = 0;
         bulletType=gameObject.GetComponent<TowerController>().bulletType;
         targetEnemy = GameManager.Instance.enemyManager.NearestEnemy(this.gameObject);
@@ -35,12 +36,13 @@ public class BulletGenerator : MonoBehaviour
     public void CreateBullet(BulletType type)
     {
         
-        interval = GameManager.Instance.playerManager.GetInterval();
-        power = GameManager.Instance.playerManager.GetPower();
+        interval = GameManager.Instance.playerManager.Interval;
+        power = GameManager.Instance.playerManager.Power;
         if (targetEnemy != null) {
             targetEnemy = GameManager.Instance.enemyManager.NearestEnemy(this.gameObject);
+            targetPos = targetEnemy.transform.position;
         }
         var bullet = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity).GetComponent<BulletBase>();
-
+        bullet.Initialize(power, targetPos);
     }
 }
