@@ -21,6 +21,21 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int experience;
     [SerializeField] private int power;
 
+    public  int Hp {
+        get { return hp; }
+        set { hp = value; }
+    }
+    public int Experience
+    {
+        get { return experience; }
+        set { experience = value; }
+    }
+    public int Power
+    {
+        get { return power; }
+        set { power = value; }
+    }
+
     private IEnemyMover currentEnemyMover = null;
 
     // Start is called before the first frame update
@@ -49,17 +64,6 @@ public class EnemyController : MonoBehaviour
         //time += (float)GameManager.Instance.timeManager.DeltaTime();
     }
 
-    public int GetHp() {
-        return hp;
-    }
-    public int GetExperience()
-    {
-        return experience;
-    }
-    public int GetPower()
-    {
-        return power;
-    }
 
     public void HitBullet(int damage)
     {
