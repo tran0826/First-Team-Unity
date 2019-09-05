@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
+using Model;
 using Phase;
+using Parameter;
 using UnityEngine;
 
 public class PhaseManager : MonoBehaviour
 {
-      [SerializeField]
-      private GameConfiguration gameConfiguration;
+    [SerializeField]
+    private GameConfiguration gameConfiguration;
 
     private IPhase currentPhase = null;
     public void Initialize() {
-        var waveParameters = gameConfiguration.WaveConfiguration.Select(WaveConfiguration => new WaveParameter()
+        var waveParameters = gameConfiguration.WaveConfigurations.Select(waveConfiguration => new WaveParameter()
         {
             WaveConfiguration = waveConfiguration
         });
