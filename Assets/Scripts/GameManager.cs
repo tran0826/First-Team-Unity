@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public EnemyManager enemyManager;
     public PlayerManager playerManager;
     public PhaseManager phaseManager;
+    public WaveManager waveManager;
     
 
 
@@ -73,5 +74,6 @@ public class GameManager : MonoBehaviour
         towerManager.UpdateByFrame();
         enemyManager.UpdateByFrame();
         playerManager.UpdateByFrame();
+        waveManager.UpdateByFrame();
     }
 }

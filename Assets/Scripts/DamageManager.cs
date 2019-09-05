@@ -49,8 +49,8 @@ public class DamageManager : MonoBehaviour
         if (enemyPlayerCoList.Count == 0) return;
         foreach(EnemyPlayerPair pair in enemyPlayerCoList)
         {
-            int enemyPower = pair.enemy.GetPower();
-            PlayerDamaged(pair.player);
+            int enemyPower = pair.enemy.Power;
+            PlayerDamaged(pair.player,enemyPower);
             EnemyDead(pair.enemy);
         }
         enemyPlayerCoList.Clear();
@@ -70,7 +70,7 @@ public class DamageManager : MonoBehaviour
             }
             pair.enemy.HitBullet(bulletPower);
             
-            if (pair.enemy.GetHp() <= 0)
+            if (pair.enemy.Hp <= 0)
             {
                 EnemyDead(pair.enemy);
             }
