@@ -9,6 +9,22 @@ public class PlayerManager : MonoBehaviour
     private float interval;
     private int power;
     private int total;
+    public float Interval
+    {
+        get { return interval; }
+        set { interval = value; }
+    }
+    public int Total
+    {
+        get { return total; }
+        set { total = value; }
+    }
+    public int Power
+    {
+        get { return power; }
+        set { power = value; }
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,19 +40,6 @@ public class PlayerManager : MonoBehaviour
 
     public void UpdateByFrame()
     {
-    }
-
-    public float GetInterval()
-    {
-        return interval;
-    }
-    public int GetPower()
-    {
-        return power;
-    }
-    
-    public int GetTotal() {
-        return total;
     }
 
 

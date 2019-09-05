@@ -5,6 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int hp;
+
+    public int Hp
+    {
+        get { return hp; }
+        set { hp = value; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +32,7 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.collisionManager.CollisionEnemyToPlayer(enemy);
         }
     }
-
-    public int GetHp()
-    {
-        return hp;
-    }
+    
 
     public void HitEnemy(int damage)
     {
