@@ -1,11 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public enum Group
-{
-    Player,
-    Enemy
-}
 
 public abstract class BulletBase : MonoBehaviour
 {
@@ -15,8 +10,7 @@ public abstract class BulletBase : MonoBehaviour
     protected float speed;
     protected Vector3 direction;
     private Renderer bulletRenderer;
-
-    [SerializeField] public Group group = Group.Enemy;
+    
     public int Power { get { return power; } protected set { power = value; } }
 
     public virtual bool CanDestroyOnCollision { get; protected set; } = true;
@@ -48,7 +42,7 @@ public abstract class BulletBase : MonoBehaviour
     public virtual void OnTriggerEnter2D(Collider2D collider)
     {
         var enemy = collider.gameObject.GetComponent<EnemyController>();
-        if (enemy != null && group == Group.Player)
+        if (enemy != null)
         {
             GameManager.Instance.collisionManager.CollisionBulletToEnemy(enemy,this);
             return;
