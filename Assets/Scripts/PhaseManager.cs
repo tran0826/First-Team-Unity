@@ -7,13 +7,16 @@ using UnityEngine;
 
 public class PhaseManager : MonoBehaviour
 {
-    //  [SerializeField]
-    //   private GameConfiguration gameConfiguration;
+      [SerializeField]
+      private GameConfiguration gameConfiguration;
 
     private IPhase currentPhase = null;
-    public void Initialize() { 
-        
-
+    public void Initialize() {
+        var waveParameters = gameConfiguration.WaveConfiguration.Select(WaveConfiguration => new WaveParameter()
+        {
+            WaveConfiguration = waveConfiguration
+        });
+        ChangePhase(new WavePhase(new GameModel(waveParameters.ToList())));
     }
 
     public void UpdateByFrame()
