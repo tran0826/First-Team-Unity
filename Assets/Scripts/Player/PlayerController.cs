@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int hp;
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class PrayerController : MonoBehaviour
         var enemy = collision.gameObject.GetComponent<EnemyController>();
         if (enemy != null)
         {
-            //GameManager.Instance.collisionManager.CollisionPlayerToEnemy(enemy);
+            GameManager.Instance.collisionManager.CollisionEnemyToPlayer(enemy);
         }
     }
 

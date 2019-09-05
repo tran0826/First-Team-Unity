@@ -47,19 +47,10 @@ public abstract class BulletBase : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D collider)
     {
-        /*
-        var player = collider.gameObject.GetComponent<PlayerController>();
-        if (player != null && group == Group.Enemy)
-        {
-            GameManager.Instance.collisionManager.CollisionBulletToPlayer(player, this);
-            return;
-        }
-
-        */
         var enemy = collider.gameObject.GetComponent<EnemyController>();
         if (enemy != null && group == Group.Player)
         {
-            GameManager.Instance.collisionManager.CollisionBulletToEnemy(enemy);
+            GameManager.Instance.collisionManager.CollisionBulletToEnemy(enemy,this);
             return;
 
         }
