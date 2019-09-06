@@ -7,17 +7,11 @@ using UnityEngine.Serialization;
 
 public class WaveConfiguration : ScriptableObject
 {
-    [SerializeField]
+    [Serializable]
     public class AppearConfiguration {
-        private double appearTime;
-
         [SerializeField]
         private GameObject apperEnemyGroup;
 
-        public double AppearTime
-        {
-            get { return appearTime; }
-        }
 
         public GameObject AppearEnemyGroup
         {
