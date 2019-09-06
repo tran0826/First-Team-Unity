@@ -16,8 +16,6 @@ public class CollisionManager : MonoBehaviour
 
     public void UpdateByFrame()
     {
-
-
         damageManager.SetCoList(enemyBulletCoList, enemyPlayerCoList);
         ResetCoList();
     }
