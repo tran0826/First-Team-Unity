@@ -34,5 +34,4 @@ public class TimeManager : MonoBehaviour
     {
         return GameManager.Instance.sharedValue.Time;
     }
-
 }
