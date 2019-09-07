@@ -7,9 +7,9 @@ public class PlayerManager : MonoBehaviour
     
     [SerializeField] private int experience;
     [SerializeField] private GameObject playerObject;
-    private float interval;
-    private int power;
-    private int total;
+    [SerializeField] private float interval;
+    [SerializeField] private int power;
+    [SerializeField] private int total;
     private Queue<GameObject> bornQueue = new Queue<GameObject>();
     private Queue<GameObject> deadQueue = new Queue<GameObject>();
 

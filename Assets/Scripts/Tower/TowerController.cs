@@ -6,9 +6,9 @@ public class TowerController : MonoBehaviour
 {
     private GameObject targetEnemy;
     private Vector3 targetPos;
-    private float interval;
-    private int power;
-    private float time;
+    [SerializeField] private float interval;
+    [SerializeField] private int power;
+    [SerializeField] private double time;
     [SerializeField] BulletType bulletType = BulletType.Fire;
     [SerializeField] public GameObject bulletPrefab;
 
@@ -27,11 +27,11 @@ public class TowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += (float)GameManager.Instance.timeManager.DeltaTime();
-        if (time >= interval)
+        time += GameManager.Instance.timeManager.DeltaTime();
+        if (time>= interval)
         {
-            time -= interval;
             CreateBullet(bulletType);
+            time -= interval;
         }
     }
 
@@ -45,6 +45,7 @@ public class TowerController : MonoBehaviour
             targetEnemy = GameManager.Instance.enemyManager.NearestEnemy(this.gameObject);
             targetPos = targetEnemy.transform.position;
         }
+
         var bullet = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity).GetComponent<BulletBase>();
         bullet.Initialize(power, targetPos);
     }

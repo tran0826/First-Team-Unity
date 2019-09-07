@@ -26,6 +26,7 @@ public abstract class BulletBase : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("bullet");
         Move();
         UpdateRotation();
 
