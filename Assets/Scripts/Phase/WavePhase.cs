@@ -24,13 +24,12 @@ namespace Phase
 
         public void OnExit()
         {
-//            GameManager.Instance.waveManager.FinishWave();
+            GameManager.Instance.waveManager.FinishWave();
         }
 
         public bool CanTransit()
         {
-            //            return GameManager.Instance.waveManager.IsFinishWave();
-            return false;
+            return GameManager.Instance.waveManager.IsFinishWave();
         }
 
         public IPhase Transit()

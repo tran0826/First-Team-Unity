@@ -10,12 +10,19 @@ public class WaveConfiguration : ScriptableObject
     [Serializable]
     public class AppearConfiguration {
         [SerializeField]
-        private GameObject apperEnemyGroup;
+        private GameObject appearEnemyGroup;
 
+        [SerializeField]
+        private double appearTime;
 
         public GameObject AppearEnemyGroup
         {
-            get { return AppearEnemyGroup; }
+            get { return appearEnemyGroup; }
+        }
+
+        public double AppearTime
+        {
+            get { return appearTime; }
         }
     }
 
