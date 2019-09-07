@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Wave1
   m_EditorClassIdentifier: 
   appearConfigurations:
-  - apperEnemyGroup: {fileID: 0}
-  - apperEnemyGroup: {fileID: 0}
-  - apperEnemyGroup: {fileID: 0}
+  - appearEnemyGroup: {fileID: 4724934000451895030, guid: 40ae30247b92ef34baa59733a21359cf,
+      type: 3}
+    appearTime: 0
+  - appearEnemyGroup: {fileID: 420340289279697274, guid: 395bec08c49fbba44acf313bfc85d351,
+      type: 3}
+    appearTime: 10
+  - appearEnemyGroup: {fileID: 0}
+    appearTime: 0
