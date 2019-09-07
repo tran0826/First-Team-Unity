@@ -10,6 +10,9 @@ public class PlayerManager : MonoBehaviour
     private float interval;
     private int power;
     private int total;
+    private Queue<GameObject> bornQueue = new Queue<GameObject>();
+    private Queue<GameObject> deadQueue = new Queue<GameObject>();
+
     public float Interval
     {
         get { return interval; }
@@ -25,6 +28,36 @@ public class PlayerManager : MonoBehaviour
         get { return power; }
         set { power = value; }
     }
+
+    public void Born(GameObject born)
+    {
+        if (born.GetComponent<EnemyController>() != null)
+        {
+            bornQueue.Enqueue(born);
+        }
+    }
+    public void Kill(GameObject kill)
+    {
+        if (kill.GetComponent<EnemyController>())
+        {
+            deadQueue.Enqueue(kill);
+        }
+    }
+    private void BornQueueProcess()
+    {
+        while (0 < bornQueue.Count)
+        {
+            PlayerUnits.Add(bornQueue.Dequeue());
+        }
+    }
+    private void KillQueueProcess()
+    {
+        while (0 < deadQueue.Count)
+        {
+            PlayerUnits.Remove(deadQueue.Dequeue());
+        }
+    }
+
 
     private HashSet<GameObject> PlayerUnits = new HashSet<GameObject>();
 
@@ -51,6 +84,8 @@ public class PlayerManager : MonoBehaviour
 
     public void UpdateByFrame()
     {
+        BornQueueProcess();
+        KillQueueProcess();
     }
 
 
