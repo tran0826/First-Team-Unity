@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour
         var enemy = collision.gameObject.GetComponent<EnemyController>();
         if (enemy != null)
         {
-            GameManager.Instance.collisionManager.CollisionEnemyToPlayer(enemy);
+            GameManager.Instance.collisionManager.CollisionEnemyToPlayer(enemy,this);
+            Debug.Log("Collision EnemyToPlayer");
         }
     }
     

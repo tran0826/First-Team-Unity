@@ -33,9 +33,10 @@ public class CollisionManager : MonoBehaviour
         enemyBulletCoList.Add(pair);
     }
 
-    public void CollisionEnemyToPlayer(EnemyController enemy)
+    public void CollisionEnemyToPlayer(EnemyController enemy,PlayerController player)
     {
-
+        EnemyPlayerPair pair = new EnemyPlayerPair(enemy, player);
+        enemyPlayerCoList.Add(pair);
     }
 
 }
