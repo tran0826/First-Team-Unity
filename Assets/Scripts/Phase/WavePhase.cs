@@ -34,6 +34,11 @@ namespace Phase
 
         public IPhase Transit()
         {
+            if (!gameModel.HasNext())
+            {
+                return new GameClearPhase();
+            }
+            gameModel.Next();
             return new WavePhase(gameModel);
         }
 

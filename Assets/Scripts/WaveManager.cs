@@ -39,13 +39,15 @@ public class WaveManager : MonoBehaviour
     {
         
         if (currentUnitAppearer.IsAllAppeared)
-        {/*
+        {
+            /*
             if (GameManager.Instance.enemyManager.IsBossExist())
             {
                 return false;
             }
             else
             {
+                GameManager.Instance.timeManager.Pause();
                 return true;
             }
             */
