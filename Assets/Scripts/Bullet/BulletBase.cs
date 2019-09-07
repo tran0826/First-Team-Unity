@@ -46,7 +46,6 @@ public abstract class BulletBase : MonoBehaviour
         {
             GameManager.Instance.collisionManager.CollisionBulletToEnemy(enemy,this);
             return;
-
         }
     }
 }

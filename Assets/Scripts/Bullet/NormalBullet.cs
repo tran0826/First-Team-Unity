@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterBullet : BulletBase
+public class NormalBullet : BulletBase
 {
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,6 @@ public class WaterBullet : BulletBase
 
     }
     public override void Move() {
-        //
+        
     }
 }
