@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     
     [SerializeField] private int experience;
+    [SerializeField] private GameObject playerObject;
     private float interval;
     private int power;
     private int total;
@@ -24,6 +25,16 @@ public class PlayerManager : MonoBehaviour
         get { return power; }
         set { power = value; }
     }
+
+    private HashSet<GameObject> PlayerUnits = new HashSet<GameObject>();
+
+    public void Awake()
+    {
+        var player = Instantiate(playerObject);
+        PlayerUnits.Add(player);
+    }
+
+    
 
 
     // Start is called before the first frame update

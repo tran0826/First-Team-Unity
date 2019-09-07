@@ -258,6 +258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experience: 0
+  playerObject: {fileID: 1284256273551762512, guid: cd0deb828054b2c409c6d7473eadbaf4,
+    type: 3}
 --- !u!114 &1552947350
 MonoBehaviour:
   m_ObjectHideFlags: 0

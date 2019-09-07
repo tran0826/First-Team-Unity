@@ -81,7 +81,7 @@ public class DamageManager : MonoBehaviour
 
     private void PlayerDamaged(PlayerController player,int damage)
     {
-        
+        player.HitEnemy(damage);
     }
 
     private void EnemyDead(EnemyController enemy)
