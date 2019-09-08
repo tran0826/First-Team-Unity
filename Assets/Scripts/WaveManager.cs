@@ -40,8 +40,8 @@ public class WaveManager : MonoBehaviour
         
         if (currentUnitAppearer.IsAllAppeared)
         {
-            /*
-            if (GameManager.Instance.enemyManager.IsBossExist())
+            
+            if (GameManager.Instance.enemyManager.CountEnemy()!=0)
             {
                 return false;
             }
@@ -50,8 +50,6 @@ public class WaveManager : MonoBehaviour
                 GameManager.Instance.timeManager.Pause();
                 return true;
             }
-            */
-            return false;
         }
         return false;
     }

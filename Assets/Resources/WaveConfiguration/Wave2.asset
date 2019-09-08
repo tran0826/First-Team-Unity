@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7721363a70bb21438ead8559c14371d, type: 3}
   m_Name: Wave2
   m_EditorClassIdentifier: 
-  appearConfigurations: []
+  appearConfigurations:
+  - appearEnemyGroup: {fileID: 6382219880604441958, guid: 1fb8934038bdfc642bdbd193cd962501,
+      type: 3}
+    appearTime: 0.1
+  - appearEnemyGroup: {fileID: 6382219880604441958, guid: 1fb8934038bdfc642bdbd193cd962501,
+      type: 3}
+    appearTime: 4

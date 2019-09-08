@@ -13,6 +13,11 @@ public class SwitchPause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    public void onClickAct()
+    {
+        Debug.Log("Click");
+        GameManager.Instance.timeManager.Resume();
     }
 }
