@@ -5,10 +5,14 @@ using UnityEngine;
 public class TowerController : MonoBehaviour
 {
     private GameObject targetEnemy;
-    private Vector3 targetPos;
+    private float targetAngle=0;
+    private float nowAngle = 0;
     [SerializeField] private float interval;
     [SerializeField] private int power;
+    
     [SerializeField] private double time;
+
+    [SerializeField] private float range;
     [SerializeField] BulletType bulletType = BulletType.Fire;
     [SerializeField] public GameObject bulletPrefab;
 
@@ -33,6 +37,8 @@ public class TowerController : MonoBehaviour
             CreateBullet(bulletType);
             time -= interval;
         }
+        nowAngle += (targetAngle - nowAngle) * 0.1f;
+        this.transform.rotation = Quaternion.Euler(0, 0, nowAngle);
     }
 
     public void CreateBullet(BulletType type)
@@ -40,13 +46,22 @@ public class TowerController : MonoBehaviour
 
         interval = GameManager.Instance.playerManager.Interval;
         power = GameManager.Instance.playerManager.Power;
-        if (targetEnemy != null)
+
+        
+        if (targetEnemy == null)
         {
             targetEnemy = GameManager.Instance.enemyManager.NearestEnemy(this.gameObject);
-            targetPos = targetEnemy.transform.position;
+            time=0;
         }
+        if (targetEnemy != null)
+        {
+            var diff = this.transform.position - targetEnemy.transform.position;
+            var axis = Vector3.Cross(gameObject.transform.forward, diff);
+            targetAngle = Vector3.Angle(new Vector3(0f, -1f, 0f), diff) * (axis.y < 0 ? -1 : 1);
 
-        var bullet = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity).GetComponent<BulletBase>();
-        bullet.Initialize(power, targetPos);
+            
+            var bullet = Instantiate(bulletPrefab, this.transform.position, Quaternion.Euler(0, 0, targetAngle)).GetComponent<BulletBase>();
+            bullet.Initialize(power);
+        }
     }
 }

@@ -65,6 +65,10 @@ public class EnemyManager : MonoBehaviour
         KillQueueProcess();
     }
 
+    public int CountEnemy() {
+        return EnemyUnits.Count;
+    }
+
     public GameObject NearestEnemy(GameObject tower)
     {
         float nearest = Mathf.Infinity;

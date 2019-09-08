@@ -5,13 +5,13 @@ using UnityEngine;
 public class NormalBullet : BulletBase
 {
     
-    public override void Initialize(int power,Vector3 targetPos) {
-        float angle = Vector3.Angle(this.transform.position,targetPos);
-        transform.RotateAround(this.transform.position,this.transform.forward,angle);
+    public override void Initialize(int power) {
+        this.Power = power;
 
+        
     }
     public override void Move() {
-        Debug.Log("Move");
-        gameObject.transform.Translate(0, speed * 0.001f / 5, 0);
+        //Debug.Log("Move");
+        gameObject.transform.Translate(0, speed * 0.1f / 5*(float)GameManager.Instance.timeManager.DeltaTime(), 0);
     }
 }

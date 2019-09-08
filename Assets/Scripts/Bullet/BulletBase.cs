@@ -26,12 +26,12 @@ public abstract class BulletBase : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("bullet");
+//        Debug.Log("bullet");
         Move();
-        UpdateRotation();
+ //       UpdateRotation();
 
     }
-    public abstract void Initialize(int power,Vector3 targetPos);
+    public abstract void Initialize(int power);
 
     private void UpdateRotation()
     {
