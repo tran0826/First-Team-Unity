@@ -261,7 +261,7 @@ MonoBehaviour:
   playerObject: {fileID: 1284256273551762512, guid: cd0deb828054b2c409c6d7473eadbaf4,
     type: 3}
   interval: 1
-  power: 0
+  power: 5
   total: 0
 --- !u!114 &1552947350
 MonoBehaviour:

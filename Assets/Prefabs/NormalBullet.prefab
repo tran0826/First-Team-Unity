@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7775863054693069790}
   - component: {fileID: 1861115222}
   - component: {fileID: 1861115223}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: NormalBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 150
-  speed: 150
+  speed: 300
 --- !u!50 &1861115222
 Rigidbody2D:
   serializedVersion: 4
