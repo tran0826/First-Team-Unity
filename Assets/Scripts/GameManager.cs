@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public PlayerManager playerManager;
     public PhaseManager phaseManager;
     public WaveManager waveManager;
+    public InstallManager installManager;
     
 
 
@@ -75,5 +76,6 @@ public class GameManager : MonoBehaviour
         enemyManager.UpdateByFrame();
         playerManager.UpdateByFrame();
         waveManager.UpdateByFrame();
+        installManager.UpdateByFrame();
     }
 }
