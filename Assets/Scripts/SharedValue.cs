@@ -15,3 +15,16 @@ public enum BulletType
     Water,
     Thunder
 }
+
+public enum TileType
+{
+    Road,
+    Grass
+}
+
+public enum TowerType
+{
+    Fire,
+    Water,
+    Thunder
+}
