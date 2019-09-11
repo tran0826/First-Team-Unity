@@ -30,10 +30,12 @@ public class InstallManager : MonoBehaviour
     {
         foreach(var tile in installList)
         {
-//            Instantiate(FireTower, tile.transform);
             tile.IsExistTower = true;
-
-            var instantiateGameObject = Instantiate(FireTower,tile.transform);
+            Vector3 installPosition = tile.transform.position;
+            installPosition.z = 0;
+            Quaternion installRotate = new Quaternion();
+            installRotate = Quaternion.identity;
+            var instantiateGameObject = Instantiate(FireTower,installPosition,installRotate);
             instantiateGameObject.transform.SetParent(appearRoot.transform);
         }
 
