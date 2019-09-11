@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public PhaseManager phaseManager;
     public WaveManager waveManager;
     public InstallManager installManager;
+    public MapManager mapManager;
     
 
 
@@ -77,5 +78,6 @@ public class GameManager : MonoBehaviour
         playerManager.UpdateByFrame();
         waveManager.UpdateByFrame();
         installManager.UpdateByFrame();
+        mapManager.UpdateByFrame();
     }
 }
