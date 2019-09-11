@@ -136,7 +136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276558023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36951876, y: -0.5034821, z: 0.08984375}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -585,7 +585,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677954438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4184204, y: 0.5827035, z: -0.0625}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -814,8 +814,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appearRoot: {fileID: 276558023}
-  mapTiles: {fileID: 6494843507737096780, guid: ddc90acf5d711fb4bbd529b95c5f4274,
-    type: 3}
+  roadTile: {fileID: 0}
+  objTile: {fileID: 298623861291059486, guid: 8627f736b81283a4bb55f472e11061a8, type: 3}
+  width: 80
+  objNum: 0
+  upLeftX: -600
+  upLeftY: -360
 --- !u!1 &1975306859
 GameObject:
   m_ObjectHideFlags: 0
