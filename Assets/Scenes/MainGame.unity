@@ -814,7 +814,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appearRoot: {fileID: 276558023}
-  roadTile: {fileID: 0}
+  roadTile: {fileID: 7746556154108627583, guid: f5ac4c03e83458b49ad0b1accc26e1bf,
+    type: 3}
   objTile: {fileID: 298623861291059486, guid: 8627f736b81283a4bb55f472e11061a8, type: 3}
   width: 80
   objNum: 0
