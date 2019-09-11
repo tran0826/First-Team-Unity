@@ -51,6 +51,14 @@ public class MapManager : MonoBehaviour
                     var instantiateGameObject = Instantiate(objTile,placePosition,q);
                     instantiateGameObject.transform.SetParent(appearRoot.transform);
                 }
+                else
+                {
+                    Vector3 placePosition = new Vector3(renderX, renderY, 1);
+                    Quaternion q = new Quaternion();
+                    q = Quaternion.identity;
+                    var instantiateGameObject = Instantiate(roadTile, placePosition, q);
+                    instantiateGameObject.transform.SetParent(appearRoot.transform);
+                }
 
 
                 renderX += width;
