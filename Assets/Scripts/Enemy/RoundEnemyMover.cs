@@ -20,7 +20,7 @@ public class RoundEnemyMover : IEnemyMover
     public void OnUpdate()
     {
 
-        gameObject.transform.Translate(0, speed * 0.1f / 5 * (float)GameManager.Instance.timeManager.DeltaTime(), 0);
+        gameObject.transform.Translate(0, speed * (float)GameManager.Instance.timeManager.DeltaTime(), 0);
 
     }
 
