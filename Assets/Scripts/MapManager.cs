@@ -6,18 +6,13 @@ public class MapManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject appearRoot;
-
     [SerializeField]
     private GameObject roadTile;
-
     [SerializeField]
     private GameObject objTile;
 
     [SerializeField]
     private int width;
-
-    [SerializeField]//敵が通るチェックポイントの数
-    private int objNum;
 
     [SerializeField]
     private int upLeftX;
@@ -26,8 +21,7 @@ public class MapManager : MonoBehaviour
 
 
     private List<string[]> map;
-    private List<GameObject> roadSeaquence;//敵が通るチェックポイント
-
+    private List<IndexSequencePair> roadSequence;
 
 
 
@@ -36,7 +30,7 @@ public class MapManager : MonoBehaviour
     {
         CsvReader csvReader = new CsvReader();
         map = csvReader.ReadFile("map");
-        roadSeaquence = new List<GameObject>();
+        roadSequence = new List<IndexSequencePair>();
         int renderX = upLeftX;
         int renderY = upLeftY;
         foreach(string[] row in map)
@@ -58,8 +52,12 @@ public class MapManager : MonoBehaviour
                     q = Quaternion.identity;
                     var instantiateGameObject = Instantiate(roadTile, placePosition, q);
                     instantiateGameObject.transform.SetParent(appearRoot.transform);
+                    if (tile != "0")
+                    {
+                        IndexSequencePair pair = new IndexSequencePair(tile, instantiateGameObject);
+                        roadSequence.Add(pair);
+                    }
                 }
-
 
                 renderX += width;
             }
@@ -75,11 +73,24 @@ public class MapManager : MonoBehaviour
 
     public GameObject NextObject(ref int nowObj)
     {
-        if (nowObj + 1 != roadSeaquence.Count)
+        if (nowObj + 1 != roadSequence.Count)
         {
             nowObj++;
         }
 
-        return roadSeaquence[nowObj];
+        return roadSequence[nowObj].obj;
     }
+
+    public class IndexSequencePair
+    {
+        public string index;
+        public GameObject obj;
+
+        public IndexSequencePair(string index, GameObject obj)
+        {
+            this.index=index;
+            this.obj=obj;
+        }
+    }
+
 }
