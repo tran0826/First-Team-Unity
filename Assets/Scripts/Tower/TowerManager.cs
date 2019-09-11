@@ -54,6 +54,10 @@ public class TowerManager : MonoBehaviour
         }
     }
 
+    public int CountTower()
+    {
+        return TowerUnits.Count;
+    }
 
     // Start is called before the first frame update
     void Start()

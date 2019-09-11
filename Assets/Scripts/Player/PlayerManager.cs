@@ -28,6 +28,11 @@ public class PlayerManager : MonoBehaviour
         get { return power; }
         set { power = value; }
     }
+    public int Experience
+    {
+        get { return experience; }
+        set { experience = value; }
+    }
 
     public void Born(GameObject born)
     {

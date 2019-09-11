@@ -73,8 +73,13 @@
     <Compile Include="Assets\Scripts\Enemy\IEnemyMover.cs" />
     <Compile Include="Assets\Scripts\Enemy\RoundEnemyMover.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\InstallManager.cs" />
+    <Compile Include="Assets\Scripts\MapManager.cs" />
     <Compile Include="Assets\Scripts\Model\GameModel.cs" />
+    <Compile Include="Assets\Scripts\Model\WaveAppearModel.cs" />
+    <Compile Include="Assets\Scripts\Model\WaveAppearsModel.cs" />
     <Compile Include="Assets\Scripts\Parameter\WaveParameter.cs" />
+    <Compile Include="Assets\Scripts\Phase\GameClearPhase.cs" />
     <Compile Include="Assets\Scripts\Phase\IPhase.cs" />
     <Compile Include="Assets\Scripts\Phase\WavePhase.cs" />
     <Compile Include="Assets\Scripts\PhaseManager.cs" />
@@ -82,8 +87,16 @@
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\SharedValue.cs" />
     <Compile Include="Assets\Scripts\TimeManager.cs" />
+    <Compile Include="Assets\Scripts\Tools\UnitAppearer.cs" />
+    <Compile Include="Assets\Scripts\Tools\UnitAppearFactory.cs" />
+    <Compile Include="Assets\Scripts\Tower\FireTowerMover.cs" />
+    <Compile Include="Assets\Scripts\Tower\ITowerMover.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerController.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerManager.cs" />
+    <Compile Include="Assets\Scripts\UI\ChangeTowerType.cs" />
+    <Compile Include="Assets\Scripts\UI\MapTile.cs" />
+    <Compile Include="Assets\Scripts\UI\SwitchPause.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\WaveManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/github/unity/First-Team-Unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
