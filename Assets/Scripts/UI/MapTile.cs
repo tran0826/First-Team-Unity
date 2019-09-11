@@ -31,7 +31,24 @@ public class MapTile : MonoBehaviour
         if (tileType != TileType.Road && isExistTower == false)
         {
             GameManager.Instance.installManager.AddInstallTowerList(this);
+            GameManager.Instance.installManager.ReturnCursor();
         }
         Debug.Log("map Click");
+    }
+
+    public void OnEnterAct()
+    {
+        if (tileType != TileType.Road && isExistTower == false)
+        {
+            GameManager.Instance.installManager.ChangeCursor();
+        }
+    }
+
+    public void OnExitAct()
+    {
+        if (tileType != TileType.Road && isExistTower == false)
+        {
+            GameManager.Instance.installManager.ReturnCursor();
+        }
     }
 }

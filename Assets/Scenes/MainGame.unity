@@ -801,6 +801,7 @@ MonoBehaviour:
   appearRoot: {fileID: 677954438}
   FireTower: {fileID: 1228076327212708196, guid: b7b7cc63aef1da04bb959b61a1e1b361,
     type: 3}
+  cursorFire: {fileID: 2800000, guid: 17f91b87e06c9a346a96a1ab087f6ed6, type: 3}
 --- !u!114 &1552947360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,7 +819,6 @@ MonoBehaviour:
     type: 3}
   objTile: {fileID: 298623861291059486, guid: 8627f736b81283a4bb55f472e11061a8, type: 3}
   width: 80
-  objNum: 0
   upLeftX: -600
   upLeftY: -360
 --- !u!1 &1975306859

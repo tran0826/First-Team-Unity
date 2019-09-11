@@ -12,6 +12,9 @@ public class InstallManager : MonoBehaviour
 
     private List<MapTile> installList = new List<MapTile>();
 
+    [SerializeField]
+    private Texture2D cursorFire;
+
  //   private TowerType installType = TowerType.Fire;
 
     public void UpdateByFrame()
@@ -31,7 +34,10 @@ public class InstallManager : MonoBehaviour
         foreach(var tile in installList)
         {
             tile.IsExistTower = true;
-            Vector3 installPosition = tile.transform.position;
+           
+            Vector2 mousePos = Input.mousePosition;
+            Camera gameCamera = Camera.main;
+            Vector3 installPosition = gameCamera.ScreenToWorldPoint(mousePos);
             installPosition.z = 0;
             Quaternion installRotate = new Quaternion();
             installRotate = Quaternion.identity;
@@ -42,4 +48,13 @@ public class InstallManager : MonoBehaviour
 
     }
 
+    public void ChangeCursor()
+    {
+        Cursor.SetCursor(cursorFire, new Vector2(cursorFire.width / 2, cursorFire.height / 2), CursorMode.ForceSoftware);
+    }
+
+    public void ReturnCursor()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
 }
