@@ -64,6 +64,7 @@ public class MapManager : MonoBehaviour
             renderX = upLeftX;
             renderY += width;
         }
+        roadSequence.Sort((a, b) => string.Compare(a.index , b.index));
     }
 
     public void UpdateByFrame()
