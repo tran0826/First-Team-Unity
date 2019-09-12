@@ -6,6 +6,7 @@ public class TowerController : MonoBehaviour
 {
 
     [SerializeField] TowerType towerType = TowerType.Fire;
+    [SerializeField] GameObject bulletPrefab;
 
     private ITowerMover currentTowerMover = null;
 
@@ -13,7 +14,9 @@ public class TowerController : MonoBehaviour
     void Start()
     {
         if (towerType == TowerType.Fire) {
-            currentTowerMover = new FireTowerMover(gameObject);
+            if(bulletPrefab==null)
+                Debug.Log("not bullet");
+            currentTowerMover = new FireTowerMover(gameObject,bulletPrefab);
             currentTowerMover.OnEnter();
         }
         
@@ -29,5 +32,6 @@ public class TowerController : MonoBehaviour
         }
     }
 
+    
 
 }

@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\SharedValue.cs" />
     <Compile Include="Assets\Scripts\TimeManager.cs" />
+    <Compile Include="Assets\Scripts\Tools\CsvReader.cs" />
     <Compile Include="Assets\Scripts\Tools\UnitAppearer.cs" />
     <Compile Include="Assets\Scripts\Tools\UnitAppearFactory.cs" />
     <Compile Include="Assets\Scripts\Tower\FireTowerMover.cs" />
