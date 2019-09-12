@@ -92,9 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01be7fa9ebe475043893935efd392128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 0
-  power: 0
-  time: 0
-  bulletType: 0
+  towerType: 0
   bulletPrefab: {fileID: 8673160288757381041, guid: 272d90a313f451e41942aa25eae2819f,
     type: 3}

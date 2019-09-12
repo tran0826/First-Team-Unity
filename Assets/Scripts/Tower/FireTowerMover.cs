@@ -11,19 +11,20 @@ public class FireTowerMover : ITowerMover
     private GameObject targetEnemy;
     private float targetAngle = 0;
     private float nowAngle = 0;
-    [SerializeField] private float interval;
-    [SerializeField] private int power;
+    private float interval;
+    private int power;
 
-    [SerializeField] private double time;
+    private double time;
 
-    [SerializeField] private float range;
+    private float range;
 
     BulletType bulletType = BulletType.Fire;
-    [SerializeField] public GameObject bulletPrefab;
+    private GameObject bulletPrefab;
 
-    public FireTowerMover(GameObject gameObject)
+    public FireTowerMover(GameObject gameObject,GameObject bulletPrefab)
     {
         this.gameObject = gameObject;
+        this.bulletPrefab = bulletPrefab;
     }
 
     public void OnEnter()
@@ -40,7 +41,7 @@ public class FireTowerMover : ITowerMover
         time += GameManager.Instance.timeManager.DeltaTime();
         if (time >= interval)
         {
-            CreateBullet(bulletType);
+            CreateBullet();
             time -= interval;
         }
         nowAngle += (targetAngle - nowAngle) * 0.1f;
@@ -53,7 +54,7 @@ public class FireTowerMover : ITowerMover
 
     }
 
-    public void CreateBullet(BulletType type)
+    public void CreateBullet()
     {
 
         interval = GameManager.Instance.playerManager.Interval;
@@ -72,8 +73,8 @@ public class FireTowerMover : ITowerMover
             targetAngle = Vector3.Angle(new Vector3(0f, -1f, 0f), diff) * (axis.y < 0 ? -1 : 1);
 
 
-            //var bullet = Instantiate(bulletPrefab, gameObject.transform.position, Quaternion.Euler(0, 0, targetAngle)).GetComponent<BulletBase>();
-            //bullet.Initialize(power);
+            var bullet = GameObject.Instantiate(bulletPrefab, gameObject.transform.position, Quaternion.Euler(0, 0, targetAngle)).GetComponent<BulletBase>();
+            bullet.Initialize(power);
         }
     }
 }
