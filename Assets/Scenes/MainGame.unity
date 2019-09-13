@@ -661,7 +661,7 @@ MonoBehaviour:
     type: 3}
   interval: 1
   power: 5
-  total: 0
+  total: 3
 --- !u!114 &1552947350
 MonoBehaviour:
   m_ObjectHideFlags: 0
