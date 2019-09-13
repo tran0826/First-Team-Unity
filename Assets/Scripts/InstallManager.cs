@@ -29,6 +29,18 @@ public class InstallManager : MonoBehaviour
         installList.Add(tile);
     }
 
+    public bool CanInstallTower()
+    {
+        if (GameManager.Instance.towerManager.CountTower() < GameManager.Instance.playerManager.Total)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     private void InstallTower()
     {
         foreach(var tile in installList)
@@ -43,6 +55,7 @@ public class InstallManager : MonoBehaviour
             installRotate = Quaternion.identity;
             var instantiateGameObject = Instantiate(FireTower,installPosition,installRotate);
             instantiateGameObject.transform.SetParent(appearRoot.transform);
+            GameManager.Instance.towerManager.Born(instantiateGameObject);
         }
 
 

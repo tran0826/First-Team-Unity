@@ -28,7 +28,7 @@ public class MapTile : MonoBehaviour
 
     public void onClickAct()
     {
-        if (tileType != TileType.Road && isExistTower == false)
+        if (tileType != TileType.Road && isExistTower == false&&GameManager.Instance.installManager.CanInstallTower())
         {
             GameManager.Instance.installManager.AddInstallTowerList(this);
             GameManager.Instance.installManager.ReturnCursor();
@@ -38,7 +38,7 @@ public class MapTile : MonoBehaviour
 
     public void OnEnterAct()
     {
-        if (tileType != TileType.Road && isExistTower == false)
+        if (tileType != TileType.Road && isExistTower == false&&GameManager.Instance.installManager.CanInstallTower())
         {
             GameManager.Instance.installManager.ChangeCursor();
         }

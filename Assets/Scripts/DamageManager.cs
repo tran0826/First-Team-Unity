@@ -52,6 +52,10 @@ public class DamageManager : MonoBehaviour
             int enemyPower = pair.enemy.Power;
             PlayerDamaged(pair.player,enemyPower);
             EnemyDead(pair.enemy);
+            if (pair.player.Hp <= 0)
+            {
+                PlayerDead(pair.player);
+            }
         }
         enemyPlayerCoList.Clear();
     }
@@ -72,6 +76,7 @@ public class DamageManager : MonoBehaviour
             
             if (pair.enemy.Hp <= 0)
             {
+                GameManager.Instance.playerManager.Experience += pair.enemy.Experience;
                 EnemyDead(pair.enemy);
             }
             
@@ -82,6 +87,11 @@ public class DamageManager : MonoBehaviour
     private void PlayerDamaged(PlayerController player,int damage)
     {
         player.HitEnemy(damage);
+    }
+
+    private void PlayerDead(PlayerController player)
+    {
+
     }
 
     private void EnemyDead(EnemyController enemy)
