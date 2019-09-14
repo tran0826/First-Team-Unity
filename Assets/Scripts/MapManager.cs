@@ -12,9 +12,6 @@ public class MapManager : MonoBehaviour
     private GameObject objTile;
 
     [SerializeField]
-    private int width;
-
-    [SerializeField]
     private int upLeftX;
     [SerializeField]
     private int upLeftY;
@@ -31,8 +28,14 @@ public class MapManager : MonoBehaviour
         CsvReader csvReader = new CsvReader();
         map = csvReader.ReadFile("map");
         roadSequence = new List<IndexSequencePair>();
+        int width = (int)objTile.GetComponent<SpriteRenderer>().bounds.size.x;
+        upLeftX += width / 2;
+        upLeftY += width / 2;
         int renderX = upLeftX;
         int renderY = upLeftY;
+       
+
+
         foreach(string[] row in map)
         {
             foreach(string tile in row)
