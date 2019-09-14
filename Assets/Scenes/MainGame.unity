@@ -301,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 640, y: 360, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -555,7 +555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628245832}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 567, y: 287, z: -0.0625}
+  m_LocalPosition: {x: 1199, y: 649, z: -0.0625}
   m_LocalScale: {x: 2.115, y: 1.418, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -613,6 +613,7 @@ GameObject:
   - component: {fileID: 1552947360}
   - component: {fileID: 1552947348}
   - component: {fileID: 1552947347}
+  - component: {fileID: 1552947361}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -772,6 +773,7 @@ MonoBehaviour:
   waveManager: {fileID: 1552947350}
   installManager: {fileID: 1552947359}
   mapManager: {fileID: 1552947360}
+  uiManager: {fileID: 1552947361}
 --- !u!4 &1552947358
 Transform:
   m_ObjectHideFlags: 0
@@ -818,9 +820,21 @@ MonoBehaviour:
   roadTile: {fileID: 7746556154108627583, guid: f5ac4c03e83458b49ad0b1accc26e1bf,
     type: 3}
   objTile: {fileID: 298623861291059486, guid: 8627f736b81283a4bb55f472e11061a8, type: 3}
-  width: 80
-  upLeftX: -600
-  upLeftY: -360
+  upLeftX: 0
+  upLeftY: 0
+--- !u!114 &1552947361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552947346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c1f39534b2059469c9d6a3a75fde7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 266298424658772224, guid: 4b4552830a79cd0409a251c6492601ee, type: 3}
 --- !u!1 &1975306859
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,12 +880,12 @@ PrefabInstance:
     - target: {fileID: 8971347113838632976, guid: ec1d77b881443684da963abedd406ba5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 640
       objectReference: {fileID: 0}
     - target: {fileID: 8971347113838632976, guid: ec1d77b881443684da963abedd406ba5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 8971347113838632976, guid: ec1d77b881443684da963abedd406ba5,
         type: 3}
