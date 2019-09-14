@@ -13,10 +13,18 @@ public class TowerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (towerType == TowerType.Fire) {
-            if(bulletPrefab==null)
-                Debug.Log("not bullet");
-            currentTowerMover = new FireTowerMover(gameObject,bulletPrefab);
+        if (towerType == TowerType.Fire)
+        {
+            currentTowerMover = new FireTowerMover(gameObject, bulletPrefab);
+            currentTowerMover.OnEnter();
+        }
+        else if (towerType == TowerType.Water)
+        {
+            currentTowerMover = new WaterTowerMover(gameObject, bulletPrefab);
+            currentTowerMover.OnEnter();
+        }
+        else {
+            currentTowerMover = new WaterTowerMover(gameObject, bulletPrefab);
             currentTowerMover.OnEnter();
         }
         
