@@ -4,12 +4,14 @@ public class RoundEnemyMover : IEnemyMover
 {
     private GameObject gameObject;
     private float speed;
-    private bool flag;
+    
     private GameObject nextObject;
     int nowObj=-1;
 
     private float targetAngle = 0;
     private float nowAngle = 0;
+
+    
 
     public RoundEnemyMover(GameObject gameObject, float speed)
     {
@@ -23,7 +25,7 @@ public class RoundEnemyMover : IEnemyMover
 
     public void OnEnter()
     {
-        flag = false;
+        
     }
 
     public void OnUpdate()
@@ -32,7 +34,7 @@ public class RoundEnemyMover : IEnemyMover
         Vector3 distVec = gameObject.transform.position - nextObject.transform.position;
         float dist = distVec.magnitude;
         if (dist<10) {
-            Debug.Log(dist+":"+ nowObj);
+            //Debug.Log(dist+":"+ nowObj);
             nextObject= GameManager.Instance.mapManager.NextObject(ref nowObj);
             
         }

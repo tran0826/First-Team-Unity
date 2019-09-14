@@ -69,22 +69,25 @@ public class EnemyManager : MonoBehaviour
         return EnemyUnits.Count;
     }
 
-    public GameObject NearestEnemy(GameObject tower)
+    public GameObject NearestEnemy(GameObject tower,float range)
     {
-        float nearest = Mathf.Infinity;
+        float nearest = range;
         GameObject nearEnemy = null;
 
         Vector3 towerPos = tower.transform.position;
 
         foreach (GameObject enemy in EnemyUnits)
         {
-            if (enemy == null) continue;
-            Vector3 distVec = towerPos - enemy.transform.position;
-            float dist = distVec.magnitude;
-            if (nearest > dist)
+            if (enemy.GetComponent<EnemyController>().existArea())
             {
-                nearest = dist;
-                nearEnemy = enemy;
+                if (enemy == null) continue;
+                Vector3 distVec = towerPos - enemy.transform.position;
+                float dist = distVec.magnitude;
+                if (nearest > dist)
+                {
+                    nearest = dist;
+                    nearEnemy = enemy;
+                }
             }
         }
         return nearEnemy;

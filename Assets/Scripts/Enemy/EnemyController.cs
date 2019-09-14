@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int experience;
     [SerializeField] private int power;
 
-    public  int Hp {
+    public int Hp {
         get { return hp; }
         set { hp = value; }
     }
@@ -36,6 +36,7 @@ public class EnemyController : MonoBehaviour
         set { power = value; }
     }
 
+    private bool existAreaFlag = false;
     private IEnemyMover currentEnemyMover = null;
 
     // Start is called before the first frame update
@@ -70,9 +71,13 @@ public class EnemyController : MonoBehaviour
         hp -= damage;
     }
 
-    public virtual void OnTriggerEnter2D(Collider2D collider)
+    public void enterExistArea()
     {
-        
+        existAreaFlag = true;
+    }
+    
+    public bool existArea() {
+        return existAreaFlag;
     }
 
 }
