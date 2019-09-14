@@ -78,7 +78,7 @@ public class EnemyManager : MonoBehaviour
 
         foreach (GameObject enemy in EnemyUnits)
         {
-            if (enemy.GetComponent<EnemyController>().existArea())
+            if (enemy.GetComponent<EnemyController>().ExistArea())
             {
                 if (enemy == null) continue;
                 Vector3 distVec = towerPos - enemy.transform.position;

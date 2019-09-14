@@ -14,12 +14,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] MoveType moveType;
 
     [SerializeField] float speed;
+    [SerializeField] float minSpeed;
 
     //private
     private float time;
     [SerializeField] private int hp;
     [SerializeField] private int experience;
     [SerializeField] private int power;
+    
 
     public int Hp {
         get { return hp; }
@@ -71,12 +73,16 @@ public class EnemyController : MonoBehaviour
         hp -= damage;
     }
 
-    public void enterExistArea()
+    public void SpeedDown(float ratio) {
+        speed = Mathf.Lerp(minSpeed, speed, ratio);
+    }
+
+    public void EnterExistArea()
     {
         existAreaFlag = true;
     }
     
-    public bool existArea() {
+    public bool ExistArea() {
         return existAreaFlag;
     }
 

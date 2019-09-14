@@ -18,7 +18,7 @@ public class CanExistArea : MonoBehaviour
         var enemy = collision.gameObject.GetComponent<EnemyController>();
         if (enemy != null)
         {
-            enemy.enterExistArea();
+            enemy.EnterExistArea();
         }
     }
 
