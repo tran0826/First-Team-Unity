@@ -16,7 +16,7 @@ public class FireTowerMover : ITowerMover
 
     private double time;
 
-    private float range;
+    private float range=250;
 
     BulletType bulletType = BulletType.Fire;
     private GameObject bulletPrefab;
@@ -32,7 +32,7 @@ public class FireTowerMover : ITowerMover
         interval = GameManager.Instance.playerManager.Interval;
         power = GameManager.Instance.playerManager.Power;
         time = 0;
-        targetEnemy = GameManager.Instance.enemyManager.NearestEnemy(gameObject);
+        targetEnemy = GameManager.Instance.enemyManager.NearestEnemy(gameObject,range);
         flag = false;
     }
 
@@ -60,10 +60,9 @@ public class FireTowerMover : ITowerMover
         interval = GameManager.Instance.playerManager.Interval;
         power = GameManager.Instance.playerManager.Power;
 
-
         if (targetEnemy == null)
         {
-            targetEnemy = GameManager.Instance.enemyManager.NearestEnemy(this.gameObject);
+            targetEnemy = GameManager.Instance.enemyManager.NearestEnemy(this.gameObject,range);
             time = 0;
         }
         if (targetEnemy != null)
@@ -72,9 +71,15 @@ public class FireTowerMover : ITowerMover
             var axis = Vector3.Cross(gameObject.transform.forward, diff);
             targetAngle = Vector3.Angle(new Vector3(0f, -1f, 0f), diff) * (axis.y < 0 ? -1 : 1);
 
-
             var bullet = GameObject.Instantiate(bulletPrefab, gameObject.transform.position, Quaternion.Euler(0, 0, targetAngle)).GetComponent<BulletBase>();
             bullet.Initialize(power);
+
+            Vector3 distVec = gameObject.transform.position - targetEnemy.transform.position;
+            float dist = distVec.magnitude;
+            if (range < dist)
+            {
+                targetEnemy = null;
+            }
         }
     }
 }
