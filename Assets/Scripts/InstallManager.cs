@@ -9,13 +9,24 @@ public class InstallManager : MonoBehaviour
     private GameObject appearRoot;
 
     public GameObject FireTower;
+    public GameObject WaterTower;
+    public GameObject ThunderTower;
 
     private List<MapTile> installList = new List<MapTile>();
 
     [SerializeField]
     private Texture2D cursorFire;
+    [SerializeField]
+    private Texture2D cursorWater;
+    [SerializeField]
+    private Texture2D cursorThunder;
 
- //   private TowerType installType = TowerType.Fire;
+    private TowerType installType = TowerType.None;
+    public TowerType InstallType
+    {
+        get { return installType; }
+        set { installType = value; }
+    }
 
     public void UpdateByFrame()
     {
@@ -45,6 +56,7 @@ public class InstallManager : MonoBehaviour
     {
         foreach(var tile in installList)
         {
+            if (installType == TowerType.None) continue;
             tile.IsExistTower = true;
            
             Vector2 mousePos = Input.mousePosition;
@@ -53,9 +65,25 @@ public class InstallManager : MonoBehaviour
             installPosition.z = 0;
             Quaternion installRotate = new Quaternion();
             installRotate = Quaternion.identity;
-            var instantiateGameObject = Instantiate(FireTower,installPosition,installRotate);
-            instantiateGameObject.transform.SetParent(appearRoot.transform);
-            GameManager.Instance.towerManager.Born(instantiateGameObject);
+            if (installType == TowerType.Fire)
+            {
+                var instantiateGameObject = Instantiate(FireTower, installPosition, installRotate);
+                instantiateGameObject.transform.SetParent(appearRoot.transform);
+                GameManager.Instance.towerManager.Born(instantiateGameObject);
+            }
+            else if (installType == TowerType.Thunder)
+            {
+                var instantiateGameObject = Instantiate(ThunderTower, installPosition, installRotate);
+                instantiateGameObject.transform.SetParent(appearRoot.transform);
+                GameManager.Instance.towerManager.Born(instantiateGameObject);
+            }
+            else if (installType == TowerType.Water)
+            {
+                var instantiateGameObject = Instantiate(WaterTower, installPosition, installRotate);
+                instantiateGameObject.transform.SetParent(appearRoot.transform);
+                GameManager.Instance.towerManager.Born(instantiateGameObject);
+            }
+            installType = TowerType.None;
         }
 
 
@@ -63,7 +91,16 @@ public class InstallManager : MonoBehaviour
 
     public void ChangeCursor()
     {
-        Cursor.SetCursor(cursorFire, new Vector2(cursorFire.width / 2, cursorFire.height / 2), CursorMode.ForceSoftware);
+        if (installType == TowerType.Fire)
+        {
+            Cursor.SetCursor(cursorFire, new Vector2(cursorFire.width / 2, cursorFire.height / 2), CursorMode.ForceSoftware);
+        }else if (installType == TowerType.Thunder)
+        {
+            Cursor.SetCursor(cursorThunder, new Vector2(cursorFire.width / 2, cursorFire.height / 2), CursorMode.ForceSoftware);
+        }else if (installType == TowerType.Water)
+        {
+            Cursor.SetCursor(cursorWater, new Vector2(cursorFire.width / 2, cursorFire.height / 2), CursorMode.ForceSoftware);
+        }
     }
 
     public void ReturnCursor()

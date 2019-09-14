@@ -24,6 +24,7 @@ public enum TileType
 
 public enum TowerType
 {
+    None,
     Fire,
     Water,
     Thunder

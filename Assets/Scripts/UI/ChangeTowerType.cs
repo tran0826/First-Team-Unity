@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ChangeTowerType : MonoBehaviour
 {
+    [SerializeField]
+    private TowerType towerType;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,11 @@ public class ChangeTowerType : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnClickAct()
+    {
+        Debug.Log("chtngeTowerType Click");
+        GameManager.Instance.installManager.InstallType = towerType;
     }
 }
