@@ -92,8 +92,10 @@
     <Compile Include="Assets\Scripts\Tools\UnitAppearFactory.cs" />
     <Compile Include="Assets\Scripts\Tower\FireTowerMover.cs" />
     <Compile Include="Assets\Scripts\Tower\ITowerMover.cs" />
+    <Compile Include="Assets\Scripts\Tower\ThunderTowerMover.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerController.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerManager.cs" />
+    <Compile Include="Assets\Scripts\Tower\WaterTowerMover.cs" />
     <Compile Include="Assets\Scripts\UI\ChangeTowerType.cs" />
     <Compile Include="Assets\Scripts\UI\MapTile.cs" />
     <Compile Include="Assets\Scripts\UI\SwitchPause.cs" />
