@@ -61,7 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bullet\BulletBase.cs" />
+    <Compile Include="Assets\Scripts\Bullet\FireBullet.cs" />
     <Compile Include="Assets\Scripts\Bullet\NormalBullet.cs" />
+    <Compile Include="Assets\Scripts\Bullet\ThunderBullet.cs" />
+    <Compile Include="Assets\Scripts\Bullet\WaterBullet.cs" />
     <Compile Include="Assets\Scripts\CanExistArea.cs" />
     <Compile Include="Assets\Scripts\CollisionManager.cs" />
     <Compile Include="Assets\Scripts\Configuration\GameConfiguration.cs" />

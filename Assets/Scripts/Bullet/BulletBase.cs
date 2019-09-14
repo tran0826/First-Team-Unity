@@ -15,8 +15,6 @@ public abstract class BulletBase : MonoBehaviour
 
     public virtual bool CanDestroyOnCollision { get; protected set; } = true;
 
-    //public PowerType PowerType { get; protected set; }
-
     void Awake()
     {
         bulletRenderer = GetComponent<Renderer>();
@@ -26,19 +24,10 @@ public abstract class BulletBase : MonoBehaviour
 
     void Update()
     {
-//        Debug.Log("bullet");
         Move();
- //       UpdateRotation();
 
     }
     public abstract void Initialize(int power);
-
-    private void UpdateRotation()
-    {
-        if (Vector3.Angle(this.transform.up, direction) < 5f) return;
-
-        this.transform.rotation = Quaternion.FromToRotation(this.transform.up, direction);
-    }
 
     public virtual void OnTriggerEnter2D(Collider2D collider)
     {
