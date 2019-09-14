@@ -100,8 +100,14 @@
     <Compile Include="Assets\Scripts\Tower\TowerManager.cs" />
     <Compile Include="Assets\Scripts\Tower\WaterTowerMover.cs" />
     <Compile Include="Assets\Scripts\UI\ChangeTowerType.cs" />
+    <Compile Include="Assets\Scripts\UI\ILevelUpeer.cs" />
+    <Compile Include="Assets\Scripts\UI\IntervalLevelUpper.cs" />
+    <Compile Include="Assets\Scripts\UI\LevelUp.cs" />
     <Compile Include="Assets\Scripts\UI\MapTile.cs" />
+    <Compile Include="Assets\Scripts\UI\PowerLevelUpper.cs" />
+    <Compile Include="Assets\Scripts\UI\ShowExperience.cs" />
     <Compile Include="Assets\Scripts\UI\SwitchPause.cs" />
+    <Compile Include="Assets\Scripts\UI\TotalLevelUpper.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\WaveManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
