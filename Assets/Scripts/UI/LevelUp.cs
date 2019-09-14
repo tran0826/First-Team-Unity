@@ -20,7 +20,15 @@ public class LevelUp : MonoBehaviour
     {
         if (levelType == LevelType.Interval)
         {
-            currentLevelUpper = new IntervalLevelUpper();
+            currentLevelUpper = new IntervalLevelUpper(this.gameObject);
+            currentLevelUpper.OnEnter();
+        }else if (levelType == LevelType.Power)
+        {
+            currentLevelUpper = new PowerLevelUpper(this.gameObject);
+            currentLevelUpper.OnEnter();
+        }else if (levelType == LevelType.Total)
+        {
+            currentLevelUpper = new TotalLevelUpper(this.gameObject);
             currentLevelUpper.OnEnter();
         }
     }

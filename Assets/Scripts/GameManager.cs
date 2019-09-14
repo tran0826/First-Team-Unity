@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     public WaveManager waveManager;
     public InstallManager installManager;
     public MapManager mapManager;
+    public UIManager uiManager;
     
 
 
@@ -79,5 +80,6 @@ public class GameManager : MonoBehaviour
         waveManager.UpdateByFrame();
         installManager.UpdateByFrame();
         mapManager.UpdateByFrame();
+        uiManager.UpdateByFrame();
     }
 }
