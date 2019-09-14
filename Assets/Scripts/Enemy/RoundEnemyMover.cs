@@ -43,7 +43,8 @@ public class RoundEnemyMover : IEnemyMover
         targetAngle = Vector3.Angle(new Vector3(0f, -1f, 0f), diff) * (axis.y < 0 ? -1 : 1);
         targetAngle += 360;
         targetAngle %= 360;
-        nowAngle += (targetAngle - nowAngle) * 0.5f;
+        //      nowAngle += (targetAngle - nowAngle) * 0.5f;
+        nowAngle = targetAngle;
         gameObject.transform.rotation = Quaternion.Euler(0, 0, nowAngle);
         gameObject.transform.Translate(0, speed * (float)GameManager.Instance.timeManager.DeltaTime(), 0);
 
