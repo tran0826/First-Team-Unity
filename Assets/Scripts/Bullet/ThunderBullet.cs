@@ -8,8 +8,7 @@ public class ThunderBullet : BulletBase
     public override void Initialize(int power)
     {
         this.Power = power;
-
-
+        CanDestroyOnCollision = false;
     }
     public override void Move()
     {
