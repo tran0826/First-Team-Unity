@@ -18,7 +18,7 @@ public class ThunderTowerMover : ITowerMover
 
     private float range = 250;
 
-    BulletType bulletType = BulletType.Fire;
+    BulletType bulletType = BulletType.Thunder;
     private GameObject bulletPrefab;
 
     public ThunderTowerMover(GameObject gameObject, GameObject bulletPrefab)

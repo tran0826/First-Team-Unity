@@ -18,7 +18,7 @@ public class WaterTowerMover : ITowerMover
 
     private float range = 250;
 
-    BulletType bulletType = BulletType.Fire;
+    BulletType bulletType = BulletType.Water;
     private GameObject bulletPrefab;
 
     public WaterTowerMover(GameObject gameObject, GameObject bulletPrefab)
