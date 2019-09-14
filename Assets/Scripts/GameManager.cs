@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         phaseManager.Initialize();
+        timeManager.Pause();
     }
 
     // Update is called once per frame

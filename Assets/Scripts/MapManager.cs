@@ -12,9 +12,6 @@ public class MapManager : MonoBehaviour
     private GameObject objTile;
 
     [SerializeField]
-    private int width;
-
-    [SerializeField]
     private int upLeftX;
     [SerializeField]
     private int upLeftY;
@@ -33,6 +30,9 @@ public class MapManager : MonoBehaviour
         roadSequence = new List<IndexSequencePair>();
         int renderX = upLeftX;
         int renderY = upLeftY;
+        int width = (int)objTile.GetComponent<SpriteRenderer>().bounds.size.x;
+
+
         foreach(string[] row in map)
         {
             foreach(string tile in row)
