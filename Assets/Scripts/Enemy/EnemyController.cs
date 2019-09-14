@@ -70,7 +70,10 @@ public class EnemyController : MonoBehaviour
 
     public void HitBullet(int damage)
     {
-        hp -= damage;
+        if (ExistArea())
+        {
+            hp -= damage;
+        }
     }
 
     public void SpeedDown(float ratio) {
