@@ -1274,9 +1274,9 @@ MonoBehaviour:
     type: 3}
   ThunderTower: {fileID: 6356467343846691177, guid: 601fd7257a480b64fabe785f8bd83a43,
     type: 3}
-  cursorFire: {fileID: 2800000, guid: 17f91b87e06c9a346a96a1ab087f6ed6, type: 3}
+  cursorFire: {fileID: 2800000, guid: 19be114d042573347b5fa51713e5993a, type: 3}
   cursorWater: {fileID: 2800000, guid: 17f91b87e06c9a346a96a1ab087f6ed6, type: 3}
-  cursorThunder: {fileID: 2800000, guid: 17f91b87e06c9a346a96a1ab087f6ed6, type: 3}
+  cursorThunder: {fileID: 2800000, guid: d31ec108ba929aa4ea4fbdbdccf88011, type: 3}
 --- !u!114 &1552947360
 MonoBehaviour:
   m_ObjectHideFlags: 0
