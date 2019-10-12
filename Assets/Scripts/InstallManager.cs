@@ -57,7 +57,7 @@ public class InstallManager : MonoBehaviour
         foreach(var tile in installList)
         {
             if (installType == TowerType.None) continue;
-            tile.IsExistTower = true;
+       //     tile.IsExistTower = true;
            
             Vector2 mousePos = Input.mousePosition;
             Camera gameCamera = Camera.main;
@@ -70,18 +70,21 @@ public class InstallManager : MonoBehaviour
                 var instantiateGameObject = Instantiate(FireTower, installPosition, installRotate);
                 instantiateGameObject.transform.SetParent(appearRoot.transform);
                 GameManager.Instance.towerManager.Born(instantiateGameObject);
+                tile.IsExistTower = instantiateGameObject;
             }
             else if (installType == TowerType.Thunder)
             {
                 var instantiateGameObject = Instantiate(ThunderTower, installPosition, installRotate);
                 instantiateGameObject.transform.SetParent(appearRoot.transform);
                 GameManager.Instance.towerManager.Born(instantiateGameObject);
+                tile.IsExistTower = instantiateGameObject;
             }
             else if (installType == TowerType.Water)
             {
                 var instantiateGameObject = Instantiate(WaterTower, installPosition, installRotate);
                 instantiateGameObject.transform.SetParent(appearRoot.transform);
                 GameManager.Instance.towerManager.Born(instantiateGameObject);
+                tile.IsExistTower = instantiateGameObject;
             }
             installType = TowerType.None;
         }

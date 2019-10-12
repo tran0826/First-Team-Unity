@@ -40,6 +40,11 @@ public class TowerController : MonoBehaviour
         }
     }
 
-    
+    public void OnClickAct()
+    {
+        Debug.Log("tower");
+        GameManager.Instance.towerManager.Kill(gameObject);
+        GameManager.Instance.destroyManager.AddDestroyList(gameObject);
+    }
 
 }

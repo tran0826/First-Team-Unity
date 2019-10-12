@@ -7,11 +7,21 @@ public class MapTile : MonoBehaviour
     [SerializeField]TileType tileType;
 
     private bool isExistTower= false;
+    private GameObject tower;
 
+    /*
     public bool IsExistTower
     {
-        get { return isExistTower; }
+        get { return (tower!=null); }
         set { isExistTower = value; }
+     
+    }
+    */
+
+    public GameObject IsExistTower
+    {
+        get { return tower; }
+        set { tower = value; }
     }
 
     // Start is called before the first frame update
@@ -28,7 +38,7 @@ public class MapTile : MonoBehaviour
 
     public void onClickAct()
     {
-        if (tileType != TileType.Road && isExistTower == false&&GameManager.Instance.installManager.CanInstallTower())
+        if (tileType != TileType.Road && tower == null&&GameManager.Instance.installManager.CanInstallTower())
         {
             GameManager.Instance.installManager.AddInstallTowerList(this);
             GameManager.Instance.installManager.ReturnCursor();
@@ -38,7 +48,7 @@ public class MapTile : MonoBehaviour
 
     public void OnEnterAct()
     {
-        if (tileType != TileType.Road && isExistTower == false&&GameManager.Instance.installManager.CanInstallTower())
+        if (tileType != TileType.Road && tower == null&&GameManager.Instance.installManager.CanInstallTower())
         {
             GameManager.Instance.installManager.ChangeCursor();
         }
@@ -46,7 +56,7 @@ public class MapTile : MonoBehaviour
 
     public void OnExitAct()
     {
-        if (tileType != TileType.Road && isExistTower == false)
+        if (tileType != TileType.Road && tower == null)
         {
             GameManager.Instance.installManager.ReturnCursor();
         }
