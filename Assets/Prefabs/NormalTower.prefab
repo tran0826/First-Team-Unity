@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1207836851464305204}
   - component: {fileID: 1207836851464305207}
   m_Layer: 13
-  m_Name: WaterTower 1
+  m_Name: NormalTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,6 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01be7fa9ebe475043893935efd392128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerType: 0
+  towerType: 2
   bulletPrefab: {fileID: 8673160288757381041, guid: 272d90a313f451e41942aa25eae2819f,
     type: 3}

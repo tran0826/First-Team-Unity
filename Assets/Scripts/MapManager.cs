@@ -30,7 +30,7 @@ public class MapManager : MonoBehaviour
         roadSequence = new List<IndexSequencePair>();
         int width = (int)objTile.GetComponent<SpriteRenderer>().bounds.size.x;
         upLeftX += width / 2;
-        upLeftY -= width / 2;
+        upLeftY += width / 2;
         int renderX = upLeftX;
         int renderY = upLeftY;
        

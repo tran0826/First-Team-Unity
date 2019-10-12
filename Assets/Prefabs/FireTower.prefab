@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01be7fa9ebe475043893935efd392128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerType: 0
+  towerType: 1
   bulletPrefab: {fileID: 4382813968562394857, guid: ff0539082faf95b4fb41edf6c2a6debf,
     type: 3}
 --- !u!60 &5676826321989662329
