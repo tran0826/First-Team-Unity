@@ -30,6 +30,12 @@ public class TimeManager : MonoBehaviour
             return Time.deltaTime;
         }
     }
+
+    public double PauseDeltaTime()
+    {
+        return Time.deltaTime;
+    }
+
     public double AbsoluteTime()
     {
         return GameManager.Instance.sharedValue.Time;

@@ -12,6 +12,8 @@ public class InstallManager : MonoBehaviour
     public GameObject WaterTower;
     public GameObject ThunderTower;
 
+    public GameObject SummonEffect;
+
     private List<MapTile> installList = new List<MapTile>();
 
     [SerializeField]
@@ -67,9 +69,11 @@ public class InstallManager : MonoBehaviour
             Vector2 mousePos = Input.mousePosition;
             Camera gameCamera = Camera.main;
             Vector3 installPosition = gameCamera.ScreenToWorldPoint(mousePos);
-            installPosition.z = 0;
+            installPosition.z = 0.5f;
             Quaternion installRotate = new Quaternion();
             installRotate = Quaternion.identity;
+            Instantiate(SummonEffect, installPosition, installRotate);
+            installPosition.z = 0;
             if (installType == TowerType.Fire)
             {
                 var instantiateGameObject = Instantiate(FireTower, installPosition, installRotate);
