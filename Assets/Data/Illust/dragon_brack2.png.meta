@@ -1,7 +1,8 @@
 fileFormatVersion: 2
-guid: d413a2fa8b7a6884e8e9d73ce854651b
+guid: 7dd08cc45e45e6748a72a47aa701ce5f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: dragon_brack2_0
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -31,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -93,11 +94,31 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: dragon_brack2_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 16
+        width: 963
+        height: 972
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ca3c6b847de5804baca8840b698fad0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 54329320ea827404298834b719230903
+    spriteID: 28d2c323dabfbeb48ac0bf12d8d747a3
     vertices: []
     indices: 
     edges: []
