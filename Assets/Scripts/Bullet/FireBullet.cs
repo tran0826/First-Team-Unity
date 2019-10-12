@@ -6,11 +6,14 @@ public class FireBullet : BulletBase
 {
     private CapsuleCollider2D bulletCollider;
     [SerializeField] private float width=100;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip sound;
 
     public override void Initialize(int power)
     {
         this.Power = power;
         bulletCollider = GetComponent<CapsuleCollider2D>();
+        audioSource.PlayOneShot(sound);
     }
     public override void Move()
     {

@@ -21,6 +21,11 @@ public class InstallManager : MonoBehaviour
     [SerializeField]
     private Texture2D cursorThunder;
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip summon;
+
     private TowerType installType = TowerType.None;
     public TowerType InstallType
     {
@@ -87,6 +92,7 @@ public class InstallManager : MonoBehaviour
                 tile.IsExistTower = instantiateGameObject;
             }
             installType = TowerType.None;
+            audioSource.PlayOneShot(summon);
         }
 
 
