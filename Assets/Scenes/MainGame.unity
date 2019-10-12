@@ -1295,7 +1295,7 @@ MonoBehaviour:
     type: 3}
   objTile: {fileID: 298623861291059486, guid: 8627f736b81283a4bb55f472e11061a8, type: 3}
   upLeftX: 0
-  upLeftY: 0
+  upLeftY: 720
 --- !u!114 &1552947361
 MonoBehaviour:
   m_ObjectHideFlags: 0
