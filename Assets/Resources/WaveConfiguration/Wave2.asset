@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Wave2
   m_EditorClassIdentifier: 
   appearConfigurations:
-  - appearEnemyGroup: {fileID: 6812091564547910399, guid: 12cc7a0b3a012644180ef3e47ee1f188,
+  - appearEnemyGroup: {fileID: 8719231904675116582, guid: 50182455a434f8e4ebe09f5cb22e63ee,
       type: 3}
     appearTime: 0.1
-  - appearEnemyGroup: {fileID: 6812091564547910399, guid: 12cc7a0b3a012644180ef3e47ee1f188,
+  - appearEnemyGroup: {fileID: 8719231904675116582, guid: 50182455a434f8e4ebe09f5cb22e63ee,
       type: 3}
-    appearTime: 4
+    appearTime: 10

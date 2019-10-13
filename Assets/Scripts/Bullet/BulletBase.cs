@@ -14,6 +14,8 @@ public abstract class BulletBase : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] private AudioClip sound;
 
+    [SerializeField] protected GameObject hitEffect;
+
     public int Power { get { return power; } protected set { power = value; } }
 
     public virtual bool CanDestroyOnCollision { get; protected set; } = true;
@@ -40,6 +42,7 @@ public abstract class BulletBase : MonoBehaviour
         if (enemy != null)
         {
             GameManager.Instance.collisionManager.CollisionBulletToEnemy(enemy,this);
+           
             return;
         }
     }

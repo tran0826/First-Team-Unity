@@ -36,6 +36,10 @@ public class FireBullet : BulletBase
                 if (enemy == null) continue;
                 GameManager.Instance.collisionManager.CollisionBulletToEnemy(enemy, this);
             }
+
+
+            
+
         }
 
         // base.OnTriggerEnter2D(bulletCollider);
