@@ -98,6 +98,7 @@ MonoBehaviour:
   towerType: 1
   bulletPrefab: {fileID: 4382813968562394857, guid: ff0539082faf95b4fb41edf6c2a6debf,
     type: 3}
+  sound: {fileID: 8300000, guid: d80ba3a9d1e5e7540b84559b143291fd, type: 3}
 --- !u!60 &5676826321989662329
 PolygonCollider2D:
   m_ObjectHideFlags: 0
