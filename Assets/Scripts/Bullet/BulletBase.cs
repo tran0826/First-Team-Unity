@@ -10,13 +10,18 @@ public abstract class BulletBase : MonoBehaviour
     protected float speed;
     protected Vector3 direction;
     private Renderer bulletRenderer;
-    
+
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip sound;
+
     public int Power { get { return power; } protected set { power = value; } }
 
     public virtual bool CanDestroyOnCollision { get; protected set; } = true;
 
     void Awake()
     {
+        audioSource = GameManager.Instance.GetComponent<AudioSource>();
+        audioSource.PlayOneShot(sound,0.5f);
         bulletRenderer = GetComponent<Renderer>();
     }
 

@@ -98,7 +98,7 @@ MonoBehaviour:
   moveType: 0
   speed: 100
   minSpeed: 30
-  hp: 300
+  hp: 1000
   experience: 1
   power: 1
 --- !u!50 &1697303909253501420

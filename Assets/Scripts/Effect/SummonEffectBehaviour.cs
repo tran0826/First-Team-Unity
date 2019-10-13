@@ -30,8 +30,6 @@ public class SummonEffectBehaviour : MonoBehaviour
         float deltaT = (float)GameManager.Instance.timeManager.PauseDeltaTime();
 
         if(t>=1.5)alpha *= 0.8f;
-        green *= 0.8f;
-        blue *= 0.8f;
         if(x<=1)x += 2f * deltaT;
         if(y<=1)y += 2f * deltaT;
         

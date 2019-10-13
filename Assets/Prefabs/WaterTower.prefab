@@ -98,6 +98,7 @@ MonoBehaviour:
   towerType: 2
   bulletPrefab: {fileID: 4636938043746356965, guid: a8af40d27640b1e4e806f78e8cede541,
     type: 3}
+  sound: {fileID: 8300000, guid: d80ba3a9d1e5e7540b84559b143291fd, type: 3}
 --- !u!50 &1518318775221312686
 Rigidbody2D:
   serializedVersion: 4
