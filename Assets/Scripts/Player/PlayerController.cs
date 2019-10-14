@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private int hp;
+    [SerializeField] private float hp;
 
-    public int Hp
+    public float Hp
     {
         get { return hp; }
         set { hp = value; }
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        GameManager.Instance.sharedValue.Hp = hp;
     }
 
     // Update is called once per frame
@@ -35,8 +35,9 @@ public class PlayerController : MonoBehaviour
     }
     
 
-    public void HitEnemy(int damage)
+    public void HitEnemy(float damage)
     {
         hp -= damage;
+        GameManager.Instance.sharedValue.Hp = hp;
     }
 }

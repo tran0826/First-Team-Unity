@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
     private float time;
     [SerializeField] private int hp;
     [SerializeField] private int experience;
-    [SerializeField] private int power;
+    [SerializeField] private float power;
     
 
     public int Hp {
@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
         get { return experience; }
         set { experience = value; }
     }
-    public int Power
+    public float Power
     {
         get { return power; }
         set { power = value; }
