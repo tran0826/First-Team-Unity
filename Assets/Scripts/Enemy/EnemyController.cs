@@ -38,6 +38,11 @@ public class EnemyController : MonoBehaviour
         set { power = value; }
     }
 
+    public float Speed
+    {
+        get { return speed; }
+    }
+
     private bool existAreaFlag = false;
     private IEnemyMover currentEnemyMover = null;
 
