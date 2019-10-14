@@ -30,6 +30,7 @@ public class RoundEnemyMover : IEnemyMover
 
     public void OnUpdate()
     {
+        speed = gameObject.GetComponent<EnemyController>().Speed;
 
         Vector3 distVec = gameObject.transform.position - nextObject.transform.position;
         float dist = distVec.magnitude;
