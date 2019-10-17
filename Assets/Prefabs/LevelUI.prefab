@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 266298425108491435}
   - component: {fileID: 266298425108491434}
   - component: {fileID: 1342766945946676087}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Power
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 266298425926231512}
   - component: {fileID: 266298425926231519}
   - component: {fileID: 9180998283241964983}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Total
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 7873214892571129200}
   - component: {fileID: 7392742571340920322}
   - component: {fileID: 4009078548974225346}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: NextTotal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1061,7 +1061,7 @@ GameObject:
   - component: {fileID: 4622916623960642822}
   - component: {fileID: 4791272729783299886}
   - component: {fileID: 7446249646943340883}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: NextPower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
