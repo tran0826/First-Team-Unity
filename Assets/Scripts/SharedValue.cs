@@ -30,3 +30,10 @@ public enum TowerType
     Water,
     Thunder
 }
+
+public enum LevelType
+{
+    Interval,
+    Total,
+    Power
+}
