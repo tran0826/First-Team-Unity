@@ -24,9 +24,9 @@ public class InstallManager : MonoBehaviour
     private Texture2D cursorThunder;
 
     [SerializeField]
-    private AudioSource audioSource;
-    [SerializeField]
     private AudioClip summon;
+    [SerializeField]
+    private AudioClip summonVoice;
 
     private TowerType installType = TowerType.None;
     public TowerType InstallType
@@ -96,7 +96,8 @@ public class InstallManager : MonoBehaviour
                 tile.IsExistTower = instantiateGameObject;
             }
             installType = TowerType.None;
-            audioSource.PlayOneShot(summon);
+            GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(summon);
+            GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(summonVoice);
         }
 
 

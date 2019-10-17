@@ -14,6 +14,11 @@ public class DamageManager : MonoBehaviour
 
     SharedValue sharedValue;
 
+    [SerializeField]
+    private AudioClip playerDamage;
+    [SerializeField]
+    private AudioClip playerDamageVoice;
+
 
     private void Awake()
     {
@@ -87,6 +92,8 @@ public class DamageManager : MonoBehaviour
     private void PlayerDamaged(PlayerController player,float damage)
     {
         player.HitEnemy(damage);
+        GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(playerDamage);
+        GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(playerDamageVoice);
     }
 
     private void PlayerDead(PlayerController player)

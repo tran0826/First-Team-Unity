@@ -47,7 +47,7 @@ public class CharacterView : MonoBehaviour
         }
         hp = nowHp;
 
-        if (t >= 2f) spriteRenderer.sprite = normal;
+        if (t >= 1.5f) spriteRenderer.sprite = normal;
 
 
     }

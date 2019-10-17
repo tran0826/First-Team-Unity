@@ -988,6 +988,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0550ca74d8f084a934e83f94aa882d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDamage: {fileID: 8300000, guid: 940a91b3cc518f341b1757249f709eaf, type: 3}
+  playerDamageVoice: {fileID: 8300000, guid: e9aa4377e88d90943a00abb691937fa6, type: 3}
 --- !u!114 &1552947356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1063,8 +1065,8 @@ MonoBehaviour:
   cursorFire: {fileID: 2800000, guid: 19be114d042573347b5fa51713e5993a, type: 3}
   cursorWater: {fileID: 2800000, guid: 17f91b87e06c9a346a96a1ab087f6ed6, type: 3}
   cursorThunder: {fileID: 2800000, guid: d31ec108ba929aa4ea4fbdbdccf88011, type: 3}
-  audioSource: {fileID: 1552947362}
   summon: {fileID: 8300000, guid: 9bc4086520ab23c48b49589dbac0911b, type: 3}
+  summonVoice: {fileID: 8300000, guid: 4af37ed4bc4ec3046abb5b0d01d6670e, type: 3}
 --- !u!114 &1552947360
 MonoBehaviour:
   m_ObjectHideFlags: 0

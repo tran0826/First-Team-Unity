@@ -30,6 +30,16 @@ public class NowLevelViewer : MonoBehaviour
             if (isNext) temp += 1;
             text.text = (temp+GameManager.Instance.playerManager.Interval).ToString();
             
+        }else if (levelType == LevelType.Total)
+        {
+            float temp = 0;
+            if (isNext) temp += 1;
+            text.text = (temp + GameManager.Instance.playerManager.Total).ToString();
+        }else if (levelType == LevelType.Power)
+        {
+            float temp = 0;
+            if (isNext) temp += 1;
+            text.text = (temp + GameManager.Instance.playerManager.Power).ToString();
         }
     }
 }
