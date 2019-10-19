@@ -237,6 +237,8 @@ MonoBehaviour:
   normal: {fileID: 21300000, guid: d470f4433461a464f9cd35a1d6e858dc, type: 3}
   summon: {fileID: 21300000, guid: fd412d18cc0635c41bbfe4cc1f005f1c, type: 3}
   damaged: {fileID: 21300000, guid: bece72c3c7f5eb14e9e5897ffa263640, type: 3}
+  summonEffect: {fileID: 2793553229312822175, guid: dfdec51a7a735a64d9e1d4f1ca86754f,
+    type: 3}
 --- !u!1 &440818376
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,9 @@ public class CharacterView : MonoBehaviour
     [SerializeField]
     private Sprite damaged;
 
+    [SerializeField]
+    private GameObject summonEffect;
+
     private float hp;
     private int summonNum;
 
@@ -36,6 +39,7 @@ public class CharacterView : MonoBehaviour
         {
             t = 0;
             spriteRenderer.sprite = summon;
+            Instantiate(summonEffect, gameObject.transform);
         }
         summonNum = nowSummonNum;
 

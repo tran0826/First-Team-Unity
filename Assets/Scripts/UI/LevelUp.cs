@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class LevelUp : MonoBehaviour
 {
-    public enum LevelType
-    {
-        Interval,
-        Total,
-        Power
-    }
 
     public LevelType levelType;
 
