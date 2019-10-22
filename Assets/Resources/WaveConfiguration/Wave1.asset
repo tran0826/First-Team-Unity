@@ -18,7 +18,7 @@ MonoBehaviour:
     appearTime: 0.1
   - appearEnemyGroup: {fileID: 6812091564547910399, guid: 12cc7a0b3a012644180ef3e47ee1f188,
       type: 3}
-    appearTime: 10
+    appearTime: 5
   - appearEnemyGroup: {fileID: 6812091564547910399, guid: 12cc7a0b3a012644180ef3e47ee1f188,
       type: 3}
-    appearTime: 20
+    appearTime: 10
