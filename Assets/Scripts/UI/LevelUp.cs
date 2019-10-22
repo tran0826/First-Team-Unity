@@ -9,6 +9,11 @@ public class LevelUp : MonoBehaviour
 
     private ILevelUpper currentLevelUpper = null;
 
+    private Animator animator;
+
+    [SerializeField]
+    private AudioClip sound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +30,8 @@ public class LevelUp : MonoBehaviour
             currentLevelUpper = new TotalLevelUpper(this.gameObject);
             currentLevelUpper.OnEnter();
         }
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,7 +48,14 @@ public class LevelUp : MonoBehaviour
         {
             Debug.Log("Click Level");
 
-            currentLevelUpper.OnClick();
+            if (currentLevelUpper.OnClick())
+            {
+                Debug.Log("flag true");
+                if (animator != null) animator.Play("animation");
+                GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(sound);
+            }
         }
+
+       
     }
 }

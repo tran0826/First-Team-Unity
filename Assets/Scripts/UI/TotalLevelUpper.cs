@@ -5,8 +5,7 @@ public class TotalLevelUpper : ILevelUpper
 {
     private GameObject gameObject;
     private float nowTotal;
-    private Text text;
-
+    
     public TotalLevelUpper(GameObject gameObject)
     {
         this.gameObject = gameObject;
@@ -15,8 +14,7 @@ public class TotalLevelUpper : ILevelUpper
     public void OnEnter()
     {
         nowTotal = GameManager.Instance.playerManager.Total;
-        text = gameObject.GetComponent<Text>();
-        text.text = "Total"+nowTotal.ToString();
+      
     }
 
     public void OnUpdate()
@@ -25,16 +23,16 @@ public class TotalLevelUpper : ILevelUpper
 
     }
 
-    public void OnClick()
+    public bool OnClick()
     {
         if (GameManager.Instance.playerManager.Experience >= 1 && GameManager.Instance.playerManager.Total <= 20)
         {
             GameManager.Instance.playerManager.Experience -= 1;
             GameManager.Instance.playerManager.Total += 1;
             nowTotal = GameManager.Instance.playerManager.Total;
-
-            text.text = "Total"+nowTotal.ToString();
+            return true;
         }
+        return false;
     }
 
     public void OnEnd()
