@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveType: 0
-  speed: 150
+  speed: 300
   minSpeed: 30
-  hp: 100
+  hp: 10
   experience: 1
   power: 1
 --- !u!50 &95633250105201996
