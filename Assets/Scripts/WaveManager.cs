@@ -13,6 +13,9 @@ public class WaveManager : MonoBehaviour
     private UnitAppearer currentUnitAppearer;
 
     private double prevEndTime = 0f;
+
+    private bool isStartWave = false;
+
     public void StartWave(WaveParameter waveParameter)
     {
         currentUnitAppearer = UnitAppearFactory.CreateFromConfiguration(appearRoot, waveParameter.WaveConfiguration);
@@ -33,6 +36,15 @@ public class WaveManager : MonoBehaviour
                 }
             }
         }
+
+        if (isStartWave == false)
+        {
+            if (GameManager.Instance.enemyManager.CountEnemy() != 0)
+            {
+                isStartWave = true;
+                GameManager.Instance.timeManager.Pause();
+            }
+        }
     }
 
     public bool IsFinishWave()
@@ -47,7 +59,7 @@ public class WaveManager : MonoBehaviour
             }
             else
             {
-                GameManager.Instance.timeManager.Pause();
+                isStartWave = false;
                 return true;
             }
         }
