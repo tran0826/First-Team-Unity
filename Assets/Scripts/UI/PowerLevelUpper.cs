@@ -5,7 +5,6 @@ public class PowerLevelUpper : ILevelUpper
 {
     private GameObject gameObject;
     private float nowPower;
-    private Text text;
 
     public PowerLevelUpper(GameObject gameObject)
     {
@@ -15,8 +14,6 @@ public class PowerLevelUpper : ILevelUpper
     public void OnEnter()
     {
         nowPower = GameManager.Instance.playerManager.Power;
-        text = gameObject.GetComponent<Text>();
-        text.text = "Power"+nowPower.ToString();
     }
 
     public void OnUpdate()
@@ -25,15 +22,16 @@ public class PowerLevelUpper : ILevelUpper
 
     }
 
-    public void OnClick()
+    public bool OnClick()
     {
         if (GameManager.Instance.playerManager.Experience >= 1 && GameManager.Instance.playerManager.Power <= 100)
         {
             GameManager.Instance.playerManager.Experience -= 1;
             GameManager.Instance.playerManager.Power +=1;
             nowPower = GameManager.Instance.playerManager.Power;
-            text.text = "Power"+nowPower.ToString();
+            return true;
         }
+        return false;
     }
 
     public void OnEnd()

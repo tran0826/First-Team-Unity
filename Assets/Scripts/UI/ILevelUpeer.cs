@@ -2,6 +2,6 @@
 {
     void OnEnter();
     void OnUpdate();
-    void OnClick();
+    bool OnClick();
     void OnEnd();
 }

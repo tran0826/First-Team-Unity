@@ -22,14 +22,16 @@ public class IntervalLevelUpper:ILevelUpper
 
     }
 
-    public void OnClick()
+    public bool OnClick()
     {
         if (GameManager.Instance.playerManager.Experience >= 1&&GameManager.Instance.playerManager.Interval>=0.1f)
         {
             GameManager.Instance.playerManager.Experience -= 1;
             GameManager.Instance.playerManager.Interval *= 0.9f;
             nowInterval = GameManager.Instance.playerManager.Interval;
+            return true;
         }
+        return false;
     }
 
     public void OnEnd()
