@@ -93,6 +93,19 @@ public class EnemyManager : MonoBehaviour
         return nearEnemy;
     }
 
+    public GameObject OneExistEnemy()
+    {
+        if (CountEnemy() == 0) return null;
+        else
+        {
+            foreach(GameObject enemy in EnemyUnits)
+            {
+                return enemy;
+            }
+        }
+        return null;
+    }
+
     // Update is called once per frame
     void Update()
     {
