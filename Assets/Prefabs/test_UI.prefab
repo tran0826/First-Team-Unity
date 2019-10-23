@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8567606799749700051}
   - component: {fileID: 2407831683226065630}
   m_Layer: 0
-  m_Name: maseki 1
+  m_Name: test_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 2942324132317455654, guid: 0066b415663968b4fb3620d838c33c63,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2942324132317455654, guid: 0066b415663968b4fb3620d838c33c63,
         type: 3}
