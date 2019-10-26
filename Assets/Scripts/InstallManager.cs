@@ -126,10 +126,13 @@ public class InstallManager : MonoBehaviour
             Cursor.SetCursor(cursorFire, new Vector2(cursorFire.width / 2, cursorFire.height / 2), CursorMode.ForceSoftware);
         }else if (installType == TowerType.Thunder)
         {
-            Cursor.SetCursor(cursorThunder, new Vector2(cursorFire.width / 2, cursorFire.height / 2), CursorMode.ForceSoftware);
+            Cursor.SetCursor(cursorThunder, new Vector2(cursorThunder.width / 2, cursorThunder.height / 2), CursorMode.ForceSoftware);
         }else if (installType == TowerType.Water)
         {
-            Cursor.SetCursor(cursorWater, new Vector2(cursorFire.width / 2, cursorFire.height / 2), CursorMode.ForceSoftware);
+            Cursor.SetCursor(cursorWater, new Vector2(cursorWater.width / 2, cursorWater.height / 2), CursorMode.ForceSoftware);
+        }else if (installType == TowerType.Normal)
+        {
+            Cursor.SetCursor(cursorNormal, new Vector2(cursorNormal.width / 2, cursorNormal.height / 2), CursorMode.ForceSoftware);
         }
     }
 
