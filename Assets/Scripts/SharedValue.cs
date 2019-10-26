@@ -7,6 +7,10 @@ public class SharedValue : MonoBehaviour
     public int Score { get; set; } = 0;
     public double Time { get; set; } = 0f;
     public float Hp { get; set; }
+    public int FireLevel { get; set; } = 0;
+    public int WaterLevel { get; set; } = 0;
+    public int ThunderLevel { get; set; } = 0;
+    public int NormalLevel { get; set; } = 0;
 }
 
 
@@ -28,7 +32,8 @@ public enum TowerType
     None,
     Fire,
     Water,
-    Thunder
+    Thunder,
+    Normal
 }
 
 public enum LevelType

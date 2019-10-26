@@ -1297,12 +1297,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appearRoot: {fileID: 677954438}
-  FireTower: {fileID: 1459093224120773575, guid: 21e46b33526c5e245bd04d904d41ee20,
-    type: 3}
-  WaterTower: {fileID: 1228076327212708196, guid: b7b7cc63aef1da04bb959b61a1e1b361,
-    type: 3}
-  ThunderTower: {fileID: 6356467343846691177, guid: 601fd7257a480b64fabe785f8bd83a43,
-    type: 3}
+  FireTower:
+  - {fileID: 1459093224120773575, guid: 21e46b33526c5e245bd04d904d41ee20, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  WaterTower:
+  - {fileID: 1228076327212708196, guid: b7b7cc63aef1da04bb959b61a1e1b361, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  ThunderTower:
+  - {fileID: 6356467343846691177, guid: 601fd7257a480b64fabe785f8bd83a43, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  NormalTower:
+  - {fileID: 757261774377677254, guid: 9dac219b604613a47bab16bf84d82df1, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   SummonEffect: {fileID: 8145005350912543738, guid: 1902ca7db005d114eafda2b4ed840e49,
     type: 3}
   cursorFire: {fileID: 2800000, guid: 19be114d042573347b5fa51713e5993a, type: 3}
