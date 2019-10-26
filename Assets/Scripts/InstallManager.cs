@@ -8,9 +8,12 @@ public class InstallManager : MonoBehaviour
     [SerializeField]
     private GameObject appearRoot;
 
-    public GameObject FireTower;
-    public GameObject WaterTower;
-    public GameObject ThunderTower;
+
+    public GameObject[] FireTower;
+    public GameObject[] WaterTower;
+    public GameObject[] ThunderTower;
+    public GameObject[] NormalTower;
+    
 
     public GameObject SummonEffect;
 
@@ -76,24 +79,35 @@ public class InstallManager : MonoBehaviour
             installPosition.z = 0;
             if (installType == TowerType.Fire)
             {
-                var instantiateGameObject = Instantiate(FireTower, installPosition, installRotate);
+                int level = GameManager.Instance.sharedValue.FireLevel;
+                var instantiateGameObject = Instantiate(FireTower[level], installPosition, installRotate);
                 instantiateGameObject.transform.SetParent(appearRoot.transform);
                 GameManager.Instance.towerManager.Born(instantiateGameObject);
                 tile.IsExistTower = instantiateGameObject;
             }
             else if (installType == TowerType.Thunder)
             {
-                var instantiateGameObject = Instantiate(ThunderTower, installPosition, installRotate);
+                int level = GameManager.Instance.sharedValue.ThunderLevel;
+                var instantiateGameObject = Instantiate(ThunderTower[level], installPosition, installRotate);
                 instantiateGameObject.transform.SetParent(appearRoot.transform);
                 GameManager.Instance.towerManager.Born(instantiateGameObject);
                 tile.IsExistTower = instantiateGameObject;
             }
             else if (installType == TowerType.Water)
             {
-                var instantiateGameObject = Instantiate(WaterTower, installPosition, installRotate);
+                int level = GameManager.Instance.sharedValue.WaterLevel;
+                var instantiateGameObject = Instantiate(WaterTower[level], installPosition, installRotate);
                 instantiateGameObject.transform.SetParent(appearRoot.transform);
                 GameManager.Instance.towerManager.Born(instantiateGameObject);
                 tile.IsExistTower = instantiateGameObject;
+            }else if (installType == TowerType.Normal)
+            {
+                int level = GameManager.Instance.sharedValue.NormalLevel;
+                var instantiateGameObject = Instantiate(NormalTower[level], installPosition, installRotate);
+                instantiateGameObject.transform.SetParent(appearRoot.transform);
+                GameManager.Instance.towerManager.Born(instantiateGameObject);
+                tile.IsExistTower = instantiateGameObject;
+
             }
             installType = TowerType.None;
             GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(summon);
