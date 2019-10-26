@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class SharedValue : MonoBehaviour
 {
     public int Score { get; set; } = 0;
@@ -13,6 +15,14 @@ public class SharedValue : MonoBehaviour
     public int NormalLevel { get; set; } = 0;
 }
 
+
+namespace Common
+{
+    public static class Define
+    {
+        public const int MAX_LEVEL = 2;
+    }
+}
 
 public enum BulletType
 {
