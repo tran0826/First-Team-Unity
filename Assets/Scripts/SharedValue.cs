@@ -28,7 +28,8 @@ public enum BulletType
 {
     Fire,
     Water,
-    Thunder
+    Thunder,
+    Normal
 }
 
 public enum TileType
