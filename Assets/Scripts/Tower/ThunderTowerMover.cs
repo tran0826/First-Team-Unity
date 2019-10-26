@@ -70,6 +70,28 @@ public class ThunderTowerMover : ITowerMover
             var diff = gameObject.transform.position - targetEnemy.transform.position;
             var axis = Vector3.Cross(gameObject.transform.forward, diff);
             targetAngle = Vector3.Angle(new Vector3(0f, -1f, 0f), diff) * (axis.y < 0 ? -1 : 1);
+            if (targetAngle - nowAngle >= 180)
+            {
+                if (targetAngle > 0)
+                {
+                    targetAngle -= 360;
+                }
+                else
+                {
+                    nowAngle += 360;
+                }
+            }
+            else if (targetAngle - nowAngle <= -180)
+            {
+                if (targetAngle < 0)
+                {
+                    targetAngle += 360;
+                }
+                else
+                {
+                    nowAngle -= 360;
+                }
+            }
 
             var bullet = GameObject.Instantiate(bulletPrefab, gameObject.transform.position, Quaternion.Euler(0, 0, targetAngle)).GetComponent<BulletBase>();
             bullet.Initialize(power);
