@@ -1729,26 +1729,26 @@ MonoBehaviour:
   appearRoot: {fileID: 677954438}
   FireTower:
   - {fileID: 1459093224120773575, guid: 21e46b33526c5e245bd04d904d41ee20, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1386031424694313396, guid: 8def817a6c4e4a24ba4e1d42b27e7d1c, type: 3}
+  - {fileID: 5160814512396453564, guid: 1552548bf3e7b0b41964201f7acffdda, type: 3}
   WaterTower:
   - {fileID: 1228076327212708196, guid: b7b7cc63aef1da04bb959b61a1e1b361, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5563097619226689233, guid: 0aacdc536aea3f84d971e6b8aab3c03f, type: 3}
+  - {fileID: 2306541120513734029, guid: 320fb6c0c48a9a24d89d73105c8dbcdc, type: 3}
   ThunderTower:
   - {fileID: 6356467343846691177, guid: 601fd7257a480b64fabe785f8bd83a43, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5415453611713144144, guid: f414d26045a84dc42a820a7214d70a47, type: 3}
+  - {fileID: 765196957368173519, guid: 0334f8b12822ccd4eadcb190f4a8514c, type: 3}
   NormalTower:
   - {fileID: 757261774377677254, guid: 9dac219b604613a47bab16bf84d82df1, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6360383338979161738, guid: 6b43120036e41e445aff71b7b8772c4a, type: 3}
+  - {fileID: 5963992837351018013, guid: b88dd3fa0664fe94a8eb09afdc169eaf, type: 3}
   SummonEffect: {fileID: 8145005350912543738, guid: 1902ca7db005d114eafda2b4ed840e49,
     type: 3}
   cursorFire: {fileID: 2800000, guid: 19be114d042573347b5fa51713e5993a, type: 3}
   cursorWater: {fileID: 2800000, guid: 17f91b87e06c9a346a96a1ab087f6ed6, type: 3}
   cursorThunder: {fileID: 2800000, guid: d31ec108ba929aa4ea4fbdbdccf88011, type: 3}
-  cursorNormal: {fileID: 0}
+  cursorNormal: {fileID: 2800000, guid: 17f91b87e06c9a346a96a1ab087f6ed6, type: 3}
   summon: {fileID: 8300000, guid: 9bc4086520ab23c48b49589dbac0911b, type: 3}
   summonVoice: {fileID: 8300000, guid: 4af37ed4bc4ec3046abb5b0d01d6670e, type: 3}
 --- !u!114 &1552947360
