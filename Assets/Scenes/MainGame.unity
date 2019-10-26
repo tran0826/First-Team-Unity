@@ -1197,9 +1197,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerType: 2
   towerPreview:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: f988f04172bceff41a7c21ed98ad8ba2, type: 3}
+  - {fileID: 21300000, guid: 856ce95bf23a25d40bb82fc8fc0a308c, type: 3}
+  - {fileID: 21300000, guid: cd6f4ff1c27fae04f95d9fc74ffd6eef, type: 3}
 --- !u!114 &1184166841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2063,9 +2063,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerType: 4
   towerPreview:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 24a126f699b816845855e6954daa5494, type: 3}
+  - {fileID: 21300000, guid: 0602f9a2a7883e74a993d502d7358af5, type: 3}
+  - {fileID: 21300000, guid: 46a11f79e885966439647d8dba73e4bf, type: 3}
 --- !u!114 &1621626954
 MonoBehaviour:
   m_ObjectHideFlags: 0
