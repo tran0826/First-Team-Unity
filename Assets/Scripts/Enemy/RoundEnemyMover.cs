@@ -42,10 +42,30 @@ public class RoundEnemyMover : IEnemyMover
         var diff = gameObject.transform.position - nextObject.transform.position;
         var axis = Vector3.Cross(gameObject.transform.forward, diff);
         targetAngle = Vector3.Angle(new Vector3(0f, -1f, 0f), diff) * (axis.y < 0 ? -1 : 1);
-        targetAngle += 360;
-        targetAngle %= 360;
-        //      nowAngle += (targetAngle - nowAngle) * 0.5f;
-        nowAngle = targetAngle;
+        if (targetAngle - nowAngle >= 180)
+        {
+            if (targetAngle > 0)
+            {
+                targetAngle -= 360;
+            }
+            else
+            {
+                nowAngle += 360;
+            }
+        }
+        else if (targetAngle - nowAngle <= -180)
+        {
+            if (targetAngle < 0)
+            {
+                targetAngle += 360;
+            }
+            else
+            {
+                nowAngle -= 360;
+            }
+        }
+        nowAngle += (targetAngle - nowAngle) * 0.1f * speed * (float)GameManager.Instance.timeManager.DeltaTime();
+        //nowAngle = targetAngle;
         gameObject.transform.rotation = Quaternion.Euler(0, 0, nowAngle);
         gameObject.transform.Translate(0, speed * (float)GameManager.Instance.timeManager.DeltaTime(), 0);
 
