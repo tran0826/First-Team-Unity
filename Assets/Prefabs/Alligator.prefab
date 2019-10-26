@@ -99,7 +99,7 @@ MonoBehaviour:
   speed: 300
   minSpeed: 30
   hp: 10
-  experience: 1
+  experience: 10
   power: 1
 --- !u!50 &95633250105201996
 Rigidbody2D:
