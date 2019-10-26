@@ -25,6 +25,8 @@ public class InstallManager : MonoBehaviour
     private Texture2D cursorWater;
     [SerializeField]
     private Texture2D cursorThunder;
+    [SerializeField]
+    private Texture2D cursorNormal;
 
     [SerializeField]
     private AudioClip summon;
