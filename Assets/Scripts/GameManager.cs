@@ -13,12 +13,13 @@ public class GameManager : MonoBehaviour
         {
             if (instance == null)
             {
+                
                 Type t = typeof(GameManager);
 
                 instance = (GameManager)FindObjectOfType(t);
                 if (instance == null)
                 {
-                    Debug.LogError(t + "をアタッチしているGameObjectはありません");
+                    Debug.Log(t + "をアタッチしているGameObjectはありません");
                 }
             }
             return instance;

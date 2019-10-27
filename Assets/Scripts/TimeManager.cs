@@ -16,7 +16,9 @@ public class TimeManager : MonoBehaviour
 
     public void UpdateByFrame()
     {
-        GameManager.Instance.sharedValue.Time += DeltaTime();
+        if(GameManager.Instance!=null) GameManager.Instance.sharedValue.Time += DeltaTime();
+  //      GameManager.Instance.sharedValue.Time += DeltaTime();
+
     }
 
     public double DeltaTime()
