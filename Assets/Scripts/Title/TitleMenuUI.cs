@@ -14,6 +14,8 @@ public class TitleMenuUI : MonoBehaviour
     [SerializeField]
     private Scene nextScene;
 
+    private float alpha = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,11 @@ public class TitleMenuUI : MonoBehaviour
         if (TitleManager.Instance.transFlag == true)
         {
             TitleManager.Instance.destroyManager.AddDestroyList(gameObject);
+        }
+        if (alpha < 1)
+        {
+            alpha +=(float) TitleManager.Instance.timeManager.DeltaTime();
+            gameObject.GetComponent<Text>().color = new Color(0, 0, 0, alpha);
         }
     }
 
