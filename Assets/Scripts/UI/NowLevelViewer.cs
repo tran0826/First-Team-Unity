@@ -26,20 +26,20 @@ public class NowLevelViewer : MonoBehaviour
     {
         if (levelType == LevelType.Interval)
         {
-            float temp = 0;
+            int temp = 1;
             if (isNext) temp += 1;
-            text.text = (temp+GameManager.Instance.playerManager.Interval).ToString();
+            text.text = (temp+GameManager.Instance.sharedValue.IntervalLevel).ToString();
             
         }else if (levelType == LevelType.Total)
         {
-            float temp = 0;
+            int temp = 1;
             if (isNext) temp += 1;
-            text.text = (temp + GameManager.Instance.playerManager.Total).ToString();
+            text.text = (temp + GameManager.Instance.sharedValue.TotalLevel).ToString();
         }else if (levelType == LevelType.Power)
         {
-            float temp = 0;
+            int temp = 1;
             if (isNext) temp += 1;
-            text.text = (temp + GameManager.Instance.playerManager.Power).ToString();
+            text.text = (temp + GameManager.Instance.sharedValue.PowerLevel).ToString();
         }
     }
 }

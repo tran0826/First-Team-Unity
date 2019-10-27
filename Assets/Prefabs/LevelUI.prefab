@@ -784,7 +784,6 @@ GameObject:
   - component: {fileID: 2672416929605090648}
   - component: {fileID: 2704152695179870249}
   - component: {fileID: 1852442819560292285}
-  - component: {fileID: 2279780282046627331}
   m_Layer: 5
   m_Name: Experience (3)
   m_TagString: Untagged
@@ -808,7 +807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 533, y: -50.7}
+  m_AnchoredPosition: {x: 583, y: -50.7}
   m_SizeDelta: {x: 35.04, y: 18.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2704152695179870249
@@ -853,19 +852,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &2279780282046627331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121330418792106037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26b3ffac9a21834bb7e60dc2ec86c75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fontSize: 15
 --- !u!50 &6105968006271403504
 Rigidbody2D:
   serializedVersion: 4
@@ -1073,7 +1059,6 @@ GameObject:
   - component: {fileID: 3074482799006860960}
   - component: {fileID: 678749445534880443}
   - component: {fileID: 3765429547147907415}
-  - component: {fileID: 5369370574190254519}
   m_Layer: 5
   m_Name: Experience (4)
   m_TagString: Untagged
@@ -1097,7 +1082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 274.47998, y: -50.7}
+  m_AnchoredPosition: {x: 324, y: -50.7}
   m_SizeDelta: {x: 35.04, y: 18.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &678749445534880443
@@ -1142,19 +1127,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &5369370574190254519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5027794017187659735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26b3ffac9a21834bb7e60dc2ec86c75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fontSize: 15
 --- !u!1 &5896841331897349606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,7 +1560,6 @@ GameObject:
   - component: {fileID: 3163131637948039581}
   - component: {fileID: 7842943005097110064}
   - component: {fileID: 183204760009366439}
-  - component: {fileID: 6979042103060368593}
   m_Layer: 5
   m_Name: Experience (5)
   m_TagString: Untagged
@@ -1612,7 +1583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 399, y: -50.7}
+  m_AnchoredPosition: {x: 455, y: -50.7}
   m_SizeDelta: {x: 35.04, y: 18.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7842943005097110064
@@ -1657,19 +1628,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &6979042103060368593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8179811231503415799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26b3ffac9a21834bb7e60dc2ec86c75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fontSize: 15
 --- !u!1 &9025778077117281628
 GameObject:
   m_ObjectHideFlags: 0

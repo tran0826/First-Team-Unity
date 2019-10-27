@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Common;
 
 public class TotalLevelUpper : ILevelUpper
 {
     private GameObject gameObject;
-    private float nowTotal;
-    
+   
     public TotalLevelUpper(GameObject gameObject)
     {
         this.gameObject = gameObject;
@@ -13,7 +13,6 @@ public class TotalLevelUpper : ILevelUpper
 
     public void OnEnter()
     {
-        nowTotal = GameManager.Instance.playerManager.Total;
       
     }
 
@@ -25,11 +24,11 @@ public class TotalLevelUpper : ILevelUpper
 
     public bool OnClick()
     {
-        if (GameManager.Instance.playerManager.Experience >= 1 && GameManager.Instance.playerManager.Total <= 20)
+        int nowLevel = GameManager.Instance.sharedValue.TotalLevel;
+        if (nowLevel < Define.MAX_PLAYER_LEVEL && GameManager.Instance.playerManager.Experience >= Define.PLAYER_LEVEL_UP_TABLE[nowLevel])
         {
-            GameManager.Instance.playerManager.Experience -= 1;
-            GameManager.Instance.playerManager.Total += 1;
-            nowTotal = GameManager.Instance.playerManager.Total;
+            GameManager.Instance.playerManager.Experience -= Define.PLAYER_LEVEL_UP_TABLE[nowLevel];
+            GameManager.Instance.sharedValue.TotalLevel += 1;
             return true;
         }
         return false;

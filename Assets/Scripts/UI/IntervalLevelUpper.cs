@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Common;
 
 public class IntervalLevelUpper:ILevelUpper
 {
     private GameObject gameObject;
-    private float nowInterval;
  
     public IntervalLevelUpper(GameObject gameObject)
     {
@@ -13,7 +13,7 @@ public class IntervalLevelUpper:ILevelUpper
 
     public void OnEnter()
     {
-        nowInterval = GameManager.Instance.playerManager.Interval;
+        
     }
 
     public void OnUpdate()
@@ -24,11 +24,11 @@ public class IntervalLevelUpper:ILevelUpper
 
     public bool OnClick()
     {
-        if (GameManager.Instance.playerManager.Experience >= 1&&GameManager.Instance.playerManager.Interval>=0.1f)
+        int nowLevel = GameManager.Instance.sharedValue.IntervalLevel;
+        if (nowLevel < Define.MAX_PLAYER_LEVEL && GameManager.Instance.playerManager.Experience >= Define.PLAYER_LEVEL_UP_TABLE[nowLevel])
         {
-            GameManager.Instance.playerManager.Experience -= 1;
-            GameManager.Instance.playerManager.Interval *= 0.9f;
-            nowInterval = GameManager.Instance.playerManager.Interval;
+            GameManager.Instance.playerManager.Experience -= Define.PLAYER_LEVEL_UP_TABLE[nowLevel];
+            GameManager.Instance.sharedValue.IntervalLevel += 1;
             return true;
         }
         return false;

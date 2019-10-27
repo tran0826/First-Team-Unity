@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Common;
 
 public class PowerLevelUpper : ILevelUpper
 {
     private GameObject gameObject;
-    private float nowPower;
 
     public PowerLevelUpper(GameObject gameObject)
     {
@@ -13,7 +13,6 @@ public class PowerLevelUpper : ILevelUpper
 
     public void OnEnter()
     {
-        nowPower = GameManager.Instance.playerManager.Power;
     }
 
     public void OnUpdate()
@@ -24,11 +23,11 @@ public class PowerLevelUpper : ILevelUpper
 
     public bool OnClick()
     {
-        if (GameManager.Instance.playerManager.Experience >= 1 && GameManager.Instance.playerManager.Power <= 100)
+        int nowLevel = GameManager.Instance.sharedValue.PowerLevel;
+        if (nowLevel < Define.MAX_PLAYER_LEVEL && GameManager.Instance.playerManager.Experience >= Define.PLAYER_LEVEL_UP_TABLE[nowLevel])
         {
-            GameManager.Instance.playerManager.Experience -= 1;
-            GameManager.Instance.playerManager.Power +=1;
-            nowPower = GameManager.Instance.playerManager.Power;
+            GameManager.Instance.playerManager.Experience -= Define.PLAYER_LEVEL_UP_TABLE[nowLevel];
+            GameManager.Instance.sharedValue.PowerLevel += 1;
             return true;
         }
         return false;
