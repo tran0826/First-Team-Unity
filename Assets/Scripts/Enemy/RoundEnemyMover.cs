@@ -64,7 +64,9 @@ public class RoundEnemyMover : IEnemyMover
                 nowAngle -= 360;
             }
         }
-        nowAngle += (targetAngle - nowAngle) * 0.1f * speed * (float)GameManager.Instance.timeManager.DeltaTime();
+        float r = 0.1f * speed * (float)GameManager.Instance.timeManager.DeltaTime();
+        if (r>1.0f) r=1.0f ;
+        nowAngle += (targetAngle - nowAngle) *r;
  //       nowAngle = targetAngle;
         gameObject.transform.rotation = Quaternion.Euler(0, 0, nowAngle);
         gameObject.transform.Translate(0, speed * (float)GameManager.Instance.timeManager.DeltaTime(), 0);
