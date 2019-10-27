@@ -71,7 +71,7 @@ public class TitleManager : MonoBehaviour
         if (transFlag == true)
         {
             Debug.Log(fadeoutTime);
-            if (fadeoutTime >= 1)
+            if (fadeoutTime >= 3)
             {
                 if (NextScene == Scene.Game)
                 {
@@ -83,6 +83,7 @@ public class TitleManager : MonoBehaviour
 
             }
             fadeoutTime += timeManager.DeltaTime();
+            GameObject.Find("BGM").GetComponent<AudioSource>().volume = (float)((3.0 - fadeoutTime) / 3.0);
         }
     }
 }

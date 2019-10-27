@@ -1168,6 +1168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDamage: {fileID: 8300000, guid: 940a91b3cc518f341b1757249f709eaf, type: 3}
   playerDamageVoice: {fileID: 8300000, guid: e9aa4377e88d90943a00abb691937fa6, type: 3}
+  gameOver: {fileID: 8300000, guid: c3d77f2bec860254aa1eccf82935f35d, type: 3}
 --- !u!114 &1552947356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2392,11 +2393,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6583816886558608246, guid: 51867041053f5974caab1ad74724eecc,
-        type: 3}
-      propertyPath: m_Name
-      value: next_enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51867041053f5974caab1ad74724eecc, type: 3}

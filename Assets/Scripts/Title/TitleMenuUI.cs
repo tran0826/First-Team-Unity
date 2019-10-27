@@ -10,6 +10,8 @@ public class TitleMenuUI : MonoBehaviour
     [SerializeField]
     private AudioClip move;
     [SerializeField]
+    private AudioClip determin;
+    [SerializeField]
     private Scene nextScene;
 
     // Start is called before the first frame update
@@ -31,8 +33,7 @@ public class TitleMenuUI : MonoBehaviour
     public void OnMousePointer()
     {
         gameObject.GetComponent<Text>().text = choose;
-        GameObject.Find("BGM").GetComponent<AudioSource>().PlayOneShot(move);
-
+        TitleManager.Instance.GetComponent<AudioSource>().PlayOneShot(move);
     }
     public void ExitMousePointer()
     {
@@ -42,5 +43,6 @@ public class TitleMenuUI : MonoBehaviour
     {
         TitleManager.Instance.transFlag = true;
         TitleManager.Instance.NextScene = nextScene;
+        TitleManager.Instance.GetComponent<AudioSource>().PlayOneShot(determin);
     }
 }

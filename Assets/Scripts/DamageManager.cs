@@ -18,6 +18,8 @@ public class DamageManager : MonoBehaviour
     private AudioClip playerDamage;
     [SerializeField]
     private AudioClip playerDamageVoice;
+    [SerializeField]
+    private AudioClip gameOver;
 
 
     private void Awake()
@@ -98,7 +100,7 @@ public class DamageManager : MonoBehaviour
 
     private void PlayerDead(PlayerController player)
     {
-
+        GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(gameOver);
     }
 
     private void EnemyDead(EnemyController enemy)
