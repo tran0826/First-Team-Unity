@@ -53,3 +53,10 @@ public enum LevelType
     Total,
     Power
 }
+
+public enum Scene
+{
+    Title,
+    Game,
+    Manual
+}

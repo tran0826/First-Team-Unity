@@ -2,12 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
     private static TitleManager instance;
 
-    private bool transFlag = false;
+    public bool transFlag = false;
+    public Scene NextScene = Scene.Title;
+    private double fadeoutTime = 0;
+
 
     public static TitleManager Instance
     {
@@ -27,7 +31,8 @@ public class TitleManager : MonoBehaviour
         }
     }
 
-
+    public TimeManager timeManager;
+    public DestroyManager destroyManager;
 
 
     virtual protected void Awake()
@@ -59,6 +64,22 @@ public class TitleManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-       
+        timeManager.UpdateByFrame();
+        destroyManager.UpdateByFrame();
+
+        Debug.Log("titleManager");
+        if (transFlag == true)
+        {
+            Debug.Log(fadeoutTime);
+            if (fadeoutTime >= 1)
+            {
+                if (NextScene == Scene.Game)
+                {
+                    SceneManager.LoadScene("MainGame");
+                }
+
+            }
+            fadeoutTime += timeManager.DeltaTime();
+        }
     }
 }

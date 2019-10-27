@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OnPointerMouseUI : MonoBehaviour
+public class TitleMenuUI : MonoBehaviour
 {
     private string choose;
     private string text;
     [SerializeField]
     private AudioClip move;
+    [SerializeField]
+    private Scene nextScene;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,10 @@ public class OnPointerMouseUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (TitleManager.Instance.transFlag == true)
+        {
+            TitleManager.Instance.destroyManager.AddDestroyList(gameObject);
+        }
     }
 
     public void OnMousePointer()
@@ -32,5 +37,10 @@ public class OnPointerMouseUI : MonoBehaviour
     public void ExitMousePointer()
     {
         gameObject.GetComponent<Text>().text = text;
+    }
+    public void OnClickAct()
+    {
+        TitleManager.Instance.transFlag = true;
+        TitleManager.Instance.NextScene = nextScene;
     }
 }
