@@ -17,7 +17,7 @@ public class Fadeout : MonoBehaviour
     {
         if (TitleManager.Instance.transFlag == true)
         {
-            alpha += (float)TitleManager.Instance.timeManager.DeltaTime();
+            alpha += (float)TitleManager.Instance.timeManager.DeltaTime()/3.0f;
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, alpha);
         }
     }
