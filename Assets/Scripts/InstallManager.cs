@@ -54,7 +54,7 @@ public class InstallManager : MonoBehaviour
 
     public bool CanInstallTower()
     {
-        if (GameManager.Instance.towerManager.CountTower() < GameManager.Instance.playerManager.Total)
+        if (GameManager.Instance.towerManager.CountTower() < GameManager.Instance.sharedValue.TotalLevel+1)
         {
             return true;
         }

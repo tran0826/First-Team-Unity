@@ -20,27 +20,21 @@ public class LevelUpTower : MonoBehaviour
     [SerializeField]
     private AudioClip sound;
 
-    private int[] LevelUpTable = new int[Define.MAX_LEVEL];
-
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < Define.MAX_LEVEL; i++)
-        {
-            LevelUpTable[i] = 10;
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
         if (nowTowerLevel == Define.MAX_LEVEL) return;
-        if (LevelUpFlag==false&&GameManager.Instance.playerManager.Experience >= LevelUpTable[nowTowerLevel])
+        if (LevelUpFlag==false&&GameManager.Instance.playerManager.Experience >= Define.LEVEL_UP_TABLE[nowTowerLevel])
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = CanLevelUp;
             LevelUpFlag = true;
         }
-        else if(GameManager.Instance.playerManager.Experience < LevelUpTable[nowTowerLevel])
+        else if(GameManager.Instance.playerManager.Experience < Define.LEVEL_UP_TABLE[nowTowerLevel])
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = CannotLevelUp;
             LevelUpFlag = false;
@@ -50,9 +44,9 @@ public class LevelUpTower : MonoBehaviour
     {
         if (nowTowerLevel == Define.MAX_LEVEL) return;
 
-        if (GameManager.Instance.playerManager.Experience >= LevelUpTable[nowTowerLevel])
+        if (GameManager.Instance.playerManager.Experience >= Define.LEVEL_UP_TABLE[nowTowerLevel])
         {
-            GameManager.Instance.playerManager.Experience -= LevelUpTable[nowTowerLevel];
+            GameManager.Instance.playerManager.Experience -= Define.LEVEL_UP_TABLE[nowTowerLevel];
             nowTowerLevel += 1;
             if (levelTowerType == TowerType.Fire)
             {

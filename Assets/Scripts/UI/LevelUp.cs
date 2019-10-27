@@ -53,7 +53,7 @@ public class LevelUp : MonoBehaviour
                 Debug.Log("flag true");
                 if (animator != null) animator.Play("animation");
                 GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(sound);
-            }
+            }           
         }
 
        
