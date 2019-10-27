@@ -97,7 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 150
   speed: 1500
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: e78a6f306ddd05b4081d73e252064a32, type: 3}
+  volume: 0.2
   hitEffect: {fileID: 0}
 --- !u!50 &1201846758111507079
 Rigidbody2D:

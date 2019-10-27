@@ -97,7 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 150
   speed: 1500
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: abff9cd97c8906a43b1ce5a0328a0dbd, type: 3}
+  volume: 0.3
   hitEffect: {fileID: 0}
   ratio: 0.8
 --- !u!50 &4036623577208398850

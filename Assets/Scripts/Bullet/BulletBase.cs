@@ -13,7 +13,7 @@ public abstract class BulletBase : MonoBehaviour
 
     private AudioSource audioSource;
     [SerializeField] private AudioClip sound;
-
+    [SerializeField] private float volume;
     [SerializeField] protected GameObject hitEffect;
 
     public int Power { get { return power; } protected set { power = value; } }
@@ -23,7 +23,7 @@ public abstract class BulletBase : MonoBehaviour
     void Awake()
     {
         audioSource = GameManager.Instance.GetComponent<AudioSource>();
-        audioSource.PlayOneShot(sound,0.5f);
+        audioSource.PlayOneShot(sound,volume);
         bulletRenderer = GetComponent<Renderer>();
     }
 
