@@ -76,6 +76,9 @@ public class TitleManager : MonoBehaviour
                 if (NextScene == Scene.Game)
                 {
                     SceneManager.LoadScene("MainGame");
+                }else if (NextScene == Scene.Manual)
+                {
+                    SceneManager.LoadScene("Manual");
                 }
 
             }
