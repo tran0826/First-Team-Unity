@@ -101,6 +101,9 @@ public class DamageManager : MonoBehaviour
     private void PlayerDead(PlayerController player)
     {
         GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(gameOver);
+        GameManager.Instance.timeManager.Pause();
+        GameManager.Instance.sharedValue.TransFlag = true;
+        GameManager.Instance.sharedValue.NextScene = Scene.GameOver;
     }
 
     private void EnemyDead(EnemyController enemy)

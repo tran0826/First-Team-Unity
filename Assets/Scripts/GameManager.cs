@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
+    private double fadeoutTime = 0;
 
     public static GameManager Instance
     {
@@ -82,5 +84,23 @@ public class GameManager : MonoBehaviour
         installManager.UpdateByFrame();
         mapManager.UpdateByFrame();
         uiManager.UpdateByFrame();
+
+        if (sharedValue.TransFlag == true)
+        {
+            if (fadeoutTime >= 3)
+            {
+                if (sharedValue.NextScene == Scene.GameOver)
+                {
+                    SceneManager.LoadScene("GameOver");
+                }
+                else if (sharedValue.NextScene == Scene.GameClear)
+                {
+                    SceneManager.LoadScene("GameClear");
+                }
+
+            }
+            fadeoutTime += timeManager.PauseDeltaTime();
+            GameObject.Find("BGM").GetComponent<AudioSource>().volume = (float)((3.0 - fadeoutTime) / 3.0);
+        }
     }
 }

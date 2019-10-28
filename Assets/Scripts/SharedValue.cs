@@ -17,6 +17,9 @@ public class SharedValue : MonoBehaviour
     public int IntervalLevel { get; set; } = 0;
     public int PowerLevel { get; set; } = 0;
     public int TotalLevel { get; set; } = 0;
+
+    public bool TransFlag { get; set; } = false;
+    public Scene NextScene { get; set; } = Scene.Title;
 }
 
 
@@ -74,5 +77,7 @@ public enum Scene
 {
     Title,
     Game,
-    Manual
+    Manual,
+    GameOver,
+    GameClear
 }

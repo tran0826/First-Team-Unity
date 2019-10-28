@@ -15,15 +15,16 @@ public class Fadeout : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (TitleManager.Instance.transFlag == true)
+        float time =(float) GameObject.Find("GameManager").GetComponent<TimeManager>().PauseDeltaTime();
+        bool transFlag = GameObject.Find("GameManager").GetComponent<SharedValue>().TransFlag;
+        if (transFlag == true)
         {
-            alpha += (float)TitleManager.Instance.timeManager.DeltaTime()/3.0f;
+            alpha += time/3.0f;
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, alpha);
         }
         else if(alpha>0)
         {
-            alpha -= (float)TitleManager.Instance.timeManager.DeltaTime();
+            alpha -= time;
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, alpha);
         }
     }
