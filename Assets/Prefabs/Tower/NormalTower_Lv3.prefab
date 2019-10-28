@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01be7fa9ebe475043893935efd392128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerType: 2
+  towerType: 4
   bulletPrefab: {fileID: 8673160288757381041, guid: 272d90a313f451e41942aa25eae2819f,
     type: 3}
   sound: {fileID: 8300000, guid: d80ba3a9d1e5e7540b84559b143291fd, type: 3}
