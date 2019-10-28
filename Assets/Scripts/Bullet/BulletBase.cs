@@ -31,8 +31,11 @@ public abstract class BulletBase : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.timeManager.DeltaTime() == 0) {
+            GameManager.Instance.destroyManager.AddDestroyList(this.gameObject);
+        }
         Move();
-
+        
     }
     public abstract void Initialize(int power);
 
