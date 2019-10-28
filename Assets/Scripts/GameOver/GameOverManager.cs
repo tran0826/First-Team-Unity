@@ -4,23 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleManager : MonoBehaviour
+public class GameOverManager : MonoBehaviour
 {
-    private static TitleManager instance;
+    private static GameOverManager instance;
 
-    public Scene NextScene = Scene.Title;
     private double fadeoutTime = 0;
 
 
-    public static TitleManager Instance
+    public static GameOverManager Instance
     {
         get
         {
             if (instance == null)
             {
-                Type t = typeof(TitleManager);
+                Type t = typeof(GameOverManager);
 
-                instance = (TitleManager)FindObjectOfType(t);
+                instance = (GameOverManager)FindObjectOfType(t);
                 if (instance == null)
                 {
                     Debug.LogError(t + "をアタッチしているGameObjectはありません");
@@ -31,7 +30,6 @@ public class TitleManager : MonoBehaviour
     }
 
     public TimeManager timeManager;
-    public DestroyManager destroyManager;
     public SharedValue sharedValue;
 
 
@@ -44,7 +42,7 @@ public class TitleManager : MonoBehaviour
     {
         if (instance == null)
         {
-            instance = this as TitleManager;
+            instance = this as GameOverManager;
             return true;
         }
         else if (Instance == this)
@@ -58,32 +56,29 @@ public class TitleManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     private void Update()
     {
         timeManager.UpdateByFrame();
-        destroyManager.UpdateByFrame();
 
-        Debug.Log("titleManager");
+        if (timeManager.AbsoluteTime() > 4f)
+        {
+            sharedValue.TransFlag = true;
+        }
+
+        Debug.Log("GameOverManager");
         if (sharedValue.TransFlag == true)
         {
             Debug.Log(fadeoutTime);
             if (fadeoutTime >= 3)
             {
-                if (NextScene == Scene.Game)
-                {
-                    SceneManager.LoadScene("MainGame");
-                }else if (NextScene == Scene.Manual)
-                {
-                    SceneManager.LoadScene("Manual");
-                }
-
+                SceneManager.LoadScene("Title");
             }
             fadeoutTime += timeManager.PauseDeltaTime();
-            GameObject.Find("BGM").GetComponent<AudioSource>().volume = (float)((3.0 - fadeoutTime) / 3.0);
+            gameObject.GetComponent<AudioSource>().volume = (float)((3.0 - fadeoutTime) / 3.0);
         }
     }
 }

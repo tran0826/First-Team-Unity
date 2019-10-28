@@ -26,7 +26,7 @@ public class TitleMenuUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TitleManager.Instance.transFlag == true)
+        if (TitleManager.Instance.sharedValue.TransFlag == true)
         {
             TitleManager.Instance.destroyManager.AddDestroyList(gameObject);
         }
@@ -48,7 +48,7 @@ public class TitleMenuUI : MonoBehaviour
     }
     public void OnClickAct()
     {
-        TitleManager.Instance.transFlag = true;
+        TitleManager.Instance.sharedValue.TransFlag = true;
         TitleManager.Instance.NextScene = nextScene;
         TitleManager.Instance.GetComponent<AudioSource>().PlayOneShot(determin);
     }

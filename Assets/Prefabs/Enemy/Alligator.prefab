@@ -100,7 +100,7 @@ MonoBehaviour:
   minSpeed: 30
   hp: 1
   experience: 100
-  power: 1
+  power: 30
 --- !u!50 &95633250105201996
 Rigidbody2D:
   serializedVersion: 4

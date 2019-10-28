@@ -16,8 +16,7 @@ public class TimeManager : MonoBehaviour
 
     public void UpdateByFrame()
     {
-        if(GameManager.Instance!=null) GameManager.Instance.sharedValue.Time += DeltaTime();
-  //      GameManager.Instance.sharedValue.Time += DeltaTime();
+        GameObject.Find("GameManager").GetComponent<SharedValue>().Time += DeltaTime();
 
     }
 
@@ -40,6 +39,6 @@ public class TimeManager : MonoBehaviour
 
     public double AbsoluteTime()
     {
-        return GameManager.Instance.sharedValue.Time;
+        return GameObject.Find("GameManager").GetComponent<SharedValue>().Time;
     }
 }
