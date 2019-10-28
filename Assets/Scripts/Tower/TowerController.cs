@@ -60,6 +60,8 @@ public class TowerController : MonoBehaviour
 
     }
 
+
+
     public void OnClickAct()
     {
         Debug.Log("tower");
