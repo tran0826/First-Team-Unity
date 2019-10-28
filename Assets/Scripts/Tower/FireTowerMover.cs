@@ -44,9 +44,12 @@ public class FireTowerMover : ITowerMover
             CreateBullet();
             time -= interval;
         }
-        nowAngle += (targetAngle - nowAngle) * 0.1f;
+        RotateTower();
+        float r = 6.0f * (float)GameManager.Instance.timeManager.DeltaTime();
+        if (r > 1.0f) r = 1.0f;
+        nowAngle += (targetAngle - nowAngle) * r;
         gameObject.transform.rotation = Quaternion.Euler(0, 0, nowAngle);
-
+        
     }
 
     public void OnEnd()
@@ -54,15 +57,11 @@ public class FireTowerMover : ITowerMover
 
     }
 
-    public void CreateBullet()
+    public void RotateTower()
     {
-
-        interval = GameManager.Instance.playerManager.Interval;
-        power = GameManager.Instance.playerManager.Power;
-
         if (targetEnemy == null)
         {
-            targetEnemy = GameManager.Instance.enemyManager.NearestEnemy(this.gameObject,range);
+            targetEnemy = GameManager.Instance.enemyManager.NearestEnemy(this.gameObject, range);
             time = 0;
         }
         if (targetEnemy != null)
@@ -92,16 +91,27 @@ public class FireTowerMover : ITowerMover
                     nowAngle -= 360;
                 }
             }
-
-            var bullet = GameObject.Instantiate(bulletPrefab, gameObject.transform.position, Quaternion.Euler(0, 0, targetAngle)).GetComponent<BulletBase>();
-            bullet.Initialize(power);
-
-            Vector3 distVec = gameObject.transform.position - targetEnemy.transform.position;
-            float dist = distVec.magnitude;
-            if (range < dist)
-            {
-                targetEnemy = null;
-            }
         }
     }
+
+    public void CreateBullet()
+    {
+
+        interval = GameManager.Instance.playerManager.Interval;
+        power = GameManager.Instance.playerManager.Power;
+
+        var bullet = GameObject.Instantiate(bulletPrefab, gameObject.transform.position, Quaternion.Euler(0, 0, targetAngle)).GetComponent<BulletBase>();
+        bullet.Initialize(power);
+
+        Vector3 distVec = gameObject.transform.position - targetEnemy.transform.position;
+        float dist = distVec.magnitude;
+        if (range < dist)
+        {
+            targetEnemy = null;
+        }
+
+
+    }
 }
+
+

@@ -44,14 +44,54 @@ public class ThunderTowerMover : ITowerMover
             CreateBullet();
             time -= interval;
         }
-        nowAngle += (targetAngle - nowAngle) * 0.1f;
+        RotateTower();
+        float r = 6.0f * (float)GameManager.Instance.timeManager.DeltaTime();
+        if (r > 1.0f) r = 1.0f;
+        nowAngle += (targetAngle - nowAngle) * r;
         gameObject.transform.rotation = Quaternion.Euler(0, 0, nowAngle);
-
+        
     }
 
     public void OnEnd()
     {
 
+    }
+
+    public void RotateTower()
+    {
+        if (targetEnemy == null)
+        {
+            targetEnemy = GameManager.Instance.enemyManager.NearestEnemy(this.gameObject, range);
+            time = 0;
+        }
+        if (targetEnemy != null)
+        {
+            var diff = gameObject.transform.position - targetEnemy.transform.position;
+            var axis = Vector3.Cross(gameObject.transform.forward, diff);
+            targetAngle = Vector3.Angle(new Vector3(0f, -1f, 0f), diff) * (axis.y < 0 ? -1 : 1);
+            if (targetAngle - nowAngle >= 180)
+            {
+                if (targetAngle > 0)
+                {
+                    targetAngle -= 360;
+                }
+                else
+                {
+                    nowAngle += 360;
+                }
+            }
+            else if (targetAngle - nowAngle <= -180)
+            {
+                if (targetAngle < 0)
+                {
+                    targetAngle += 360;
+                }
+                else
+                {
+                    nowAngle -= 360;
+                }
+            }
+        }
     }
 
     public void CreateBullet()
