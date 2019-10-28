@@ -97,6 +97,7 @@ public class FireTowerMover : ITowerMover
     public void CreateBullet()
     {
 
+        if (targetEnemy == null) return;
         interval = GameManager.Instance.playerManager.Interval;
         power = GameManager.Instance.playerManager.Power;
 
