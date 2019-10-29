@@ -11,6 +11,7 @@ public class TowerController : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] AudioClip sound;
 
+
     private ITowerMover currentTowerMover = null;
     private bool WillDestroy = false;
     private float DestroyTime = 0;
@@ -24,31 +25,30 @@ public class TowerController : MonoBehaviour
         {
             currentTowerMover = new FireTowerMover(gameObject, bulletPrefab);
             currentTowerMover.OnEnter();
+            Debug.Log("fire");
         }
         else if (towerType == TowerType.Water)
         {
             currentTowerMover = new WaterTowerMover(gameObject, bulletPrefab);
             currentTowerMover.OnEnter();
+            //Debug.Log("water");
         }
-        else {
-            currentTowerMover = new WaterTowerMover(gameObject, bulletPrefab);
-            currentTowerMover.OnEnter();
-        }
-        
-
-    }
-
-
-    /*
-     
-        else if(towerType == TowerType.Thunder){
+        else if (towerType == TowerType.Thunder)
+        {
             currentTowerMover = new ThunderTowerMover(gameObject, bulletPrefab);
             currentTowerMover.OnEnter();
-        }else{
+            //Debug.Log("thunder");
+        }
+        else
+        {
             currentTowerMover = new NormalTowerMover(gameObject, bulletPrefab);
             currentTowerMover.OnEnter();
+            //Debug.Log("normal");
         }
-     */
+
+
+    }
+   
 
     // Update is called once per frame
     void Update()
