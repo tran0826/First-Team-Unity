@@ -25,7 +25,7 @@ public class NormalTowerMover : ITowerMover
     {
         this.gameObject = gameObject;
         this.bulletPrefab = bulletPrefab;
-        Debug.Log("normal");
+        //Debug.Log("normal");
     }
 
     public void OnEnter()
