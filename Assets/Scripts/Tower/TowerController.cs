@@ -38,6 +38,18 @@ public class TowerController : MonoBehaviour
 
     }
 
+
+    /*
+     
+        else if(towerType == TowerType.Thunder){
+            currentTowerMover = new ThunderTowerMover(gameObject, bulletPrefab);
+            currentTowerMover.OnEnter();
+        }else{
+            currentTowerMover = new NormalTowerMover(gameObject, bulletPrefab);
+            currentTowerMover.OnEnter();
+        }
+     */
+
     // Update is called once per frame
     void Update()
     {
