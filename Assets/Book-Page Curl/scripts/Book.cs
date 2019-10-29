@@ -306,6 +306,31 @@ public class Book : MonoBehaviour {
         if (interactable)
             ReleasePage();
     }
+
+    public void OnMouseEnterLeft()
+    {
+        if (currentPage == 2)
+        {
+            interactable = false;
+        }
+        else
+        {
+            interactable = true;
+        }
+    }
+
+    public void OnMouseEnterRight()
+    {
+        if (currentPage == bookPages.Length - 2)
+        {
+            interactable = false;
+        }
+        else
+        {
+            interactable = true;
+        }
+    }
+
     public void ReleasePage()
     {
         if (pageDragging)
