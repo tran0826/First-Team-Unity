@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using UnityEngine;
 
 public class DamageManager : MonoBehaviour
@@ -84,6 +85,10 @@ public class DamageManager : MonoBehaviour
 
             if (pair.enemy.Hp <= 0)
             {
+                if (pair.enemy.isBoss == true)
+                {
+                    GameClear();
+                }
                 GameManager.Instance.playerManager.Experience += pair.enemy.Experience;
                 EnemyDead(pair.enemy);
             }
@@ -118,5 +123,15 @@ public class DamageManager : MonoBehaviour
 
     }
 
+    private void GameClear()
+    {
+        GameManager.Instance.timeManager.Pause();
+        GameManager.Instance.sharedValue.TransFlag = true;
+        GameManager.Instance.sharedValue.NextScene = Scene.GameClear;
+        float score = GameManager.Instance.sharedValue.Hp * GameManager.Instance.playerManager.Experience;
+
+
+        File.AppendAllText("score", score.ToString());
+    }
 
 }
