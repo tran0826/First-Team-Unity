@@ -52,7 +52,9 @@ public abstract class BulletBase : MonoBehaviour
         if (enemy != null)
         {
             GameManager.Instance.collisionManager.CollisionBulletToEnemy(enemy,this);
-           
+            var effectPos = collider.gameObject.GetComponent<EnemyController>().transform.position;
+            effectPos.z = -5;
+            Instantiate(hitEffect, effectPos, Quaternion.Euler(Vector3.zero));
             return;
         }
     }

@@ -25,6 +25,9 @@ public class WaterBullet : BulletBase
             nowLevel=GameManager.Instance.sharedValue.ThunderLevel;
             enemy.SpeedDown(speed_ratio[nowLevel]);
             GameManager.Instance.collisionManager.CollisionBulletToEnemy(enemy, this);
+            var effectPos = collider.gameObject.GetComponent<EnemyController>().transform.position;
+            effectPos.z = -5;
+            Instantiate(hitEffect, effectPos, Quaternion.Euler(Vector3.zero));
             return;
         }
     }
