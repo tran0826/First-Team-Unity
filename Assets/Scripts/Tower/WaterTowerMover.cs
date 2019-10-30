@@ -17,7 +17,7 @@ public class WaterTowerMover : ITowerMover
 
     private double time;
 
-    private float range = 250;
+    private float range = 200;
     private float power_ratio = 0.5f;
     private float interval_ratio = 1.2f;
 
