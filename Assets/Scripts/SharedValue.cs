@@ -41,9 +41,9 @@ namespace Common
             };
 
         public const float MAX_INTERVAL = 1.0f;
-        public const float MIN_INTERVAL = 0.3f;
+        public const float MIN_INTERVAL = 0.1f;
 
-        public const int MAX_POWER = 100;
+        public const int MAX_POWER = 50;
         public const int MIN_POWER = 5;
 
     }

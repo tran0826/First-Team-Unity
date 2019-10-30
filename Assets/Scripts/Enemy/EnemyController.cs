@@ -21,6 +21,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int hp;
     [SerializeField] private int experience;
     [SerializeField] private float power;
+
+    [SerializeField] public bool isBoss;
     
 
     public int Hp {

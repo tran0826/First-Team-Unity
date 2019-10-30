@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
                 }
                 else if (sharedValue.NextScene == Scene.GameClear)
                 {
-                    SceneManager.LoadScene("GameClear");
+                    SceneManager.LoadScene("Result");
                 }
 
             }
