@@ -14,6 +14,7 @@ public class TitleMenuUI : MonoBehaviour
     [SerializeField]
     private Scene nextScene;
 
+
     private float alpha = 0;
 
     // Start is called before the first frame update
@@ -41,10 +42,12 @@ public class TitleMenuUI : MonoBehaviour
     {
         gameObject.GetComponent<Text>().text = choose;
         TitleManager.Instance.GetComponent<AudioSource>().PlayOneShot(move);
+        gameObject.GetComponent<SpriteRenderer>().color=new Color(1,1,1,1);
     }
     public void ExitMousePointer()
     {
         gameObject.GetComponent<Text>().text = text;
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
     }
     public void OnClickAct()
     {

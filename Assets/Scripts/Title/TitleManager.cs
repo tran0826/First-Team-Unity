@@ -80,7 +80,14 @@ public class TitleManager : MonoBehaviour
                 {
                     SceneManager.LoadScene("Manual");
                 }
-
+                else if (NextScene == Scene.Exit)
+                {
+#if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_STANDALONE
+                    UnityEngine.Application.Quit();
+#endif
+                }
             }
             fadeoutTime += timeManager.PauseDeltaTime();
             GameObject.Find("BGM").GetComponent<AudioSource>().volume = (float)((3.0 - fadeoutTime) / 3.0);
