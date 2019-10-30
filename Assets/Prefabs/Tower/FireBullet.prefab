@@ -99,9 +99,9 @@ MonoBehaviour:
   speed: 1500
   sound: {fileID: 8300000, guid: 5b8e8092e1a4e09428d2d40df9fa3af2, type: 3}
   volume: 0.5
-  hitEffect: {fileID: 6135669189104549060, guid: 8bdeec7c8a802ef4dadebee4d4666310,
+  hitEffect: {fileID: 3720562278523289008, guid: 33c952776f7bc6048be6d6752397b8cd,
     type: 3}
-  width: 100
+  bulletType: 0
 --- !u!50 &2700495059221355676
 Rigidbody2D:
   serializedVersion: 4
