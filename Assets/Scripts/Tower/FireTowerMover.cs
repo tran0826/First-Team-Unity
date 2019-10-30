@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Common;
 
 public class FireTowerMover : ITowerMover
 {
@@ -17,6 +18,9 @@ public class FireTowerMover : ITowerMover
     private double time;
 
     private float range=250;
+
+    private float power_ratio = 1.0f;
+    private float interval_ratio = 1.0f;
 
     BulletType bulletType = BulletType.Fire;
     private GameObject bulletPrefab;
@@ -96,10 +100,8 @@ public class FireTowerMover : ITowerMover
 
     public void CreateBullet()
     {
-
+        SetParam();
         if (targetEnemy == null) return;
-        interval = GameManager.Instance.playerManager.Interval;
-        power = GameManager.Instance.playerManager.Power;
 
         var bullet = GameObject.Instantiate(bulletPrefab, gameObject.transform.position, Quaternion.Euler(0, 0, targetAngle)).GetComponent<BulletBase>();
         bullet.Initialize(power);
@@ -112,6 +114,13 @@ public class FireTowerMover : ITowerMover
         }
 
 
+    }
+
+    public void SetParam() {
+        power = (int)((float)GameManager.Instance.sharedValue.PowerLevel/(float)Define.MAX_PLAYER_LEVEL
+            *(Define.MAX_POWER-Define.MIN_POWER)*power_ratio)+Define.MIN_POWER;
+        interval = (float)(Define.MAX_PLAYER_LEVEL - GameManager.Instance.sharedValue.IntervalLevel) / (float)Define.MAX_PLAYER_LEVEL
+            * (Define.MAX_INTERVAL - Define.MIN_INTERVAL) * interval_ratio+Define.MIN_INTERVAL;
     }
 }
 

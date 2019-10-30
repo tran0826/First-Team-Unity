@@ -60,6 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Book-Page Curl\scripts\AutoFlip.cs" />
+    <Compile Include="Assets\Book-Page Curl\scripts\Book.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletBase.cs" />
     <Compile Include="Assets\Scripts\Bullet\FireBullet.cs" />
     <Compile Include="Assets\Scripts\Bullet\NormalBullet.cs" />
@@ -78,7 +80,11 @@
     <Compile Include="Assets\Scripts\Enemy\IEnemyMover.cs" />
     <Compile Include="Assets\Scripts\Enemy\RoundEnemyMover.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameOver\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\InstallManager.cs" />
+    <Compile Include="Assets\Scripts\Manual\BookFlip.cs" />
+    <Compile Include="Assets\Scripts\Manual\ManualManager.cs" />
+    <Compile Include="Assets\Scripts\Manual\ReturnTitle.cs" />
     <Compile Include="Assets\Scripts\MapManager.cs" />
     <Compile Include="Assets\Scripts\Model\GameModel.cs" />
     <Compile Include="Assets\Scripts\Model\WaveAppearModel.cs" />
@@ -92,11 +98,15 @@
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\SharedValue.cs" />
     <Compile Include="Assets\Scripts\TimeManager.cs" />
+    <Compile Include="Assets\Scripts\Title\Fadeout.cs" />
+    <Compile Include="Assets\Scripts\Title\TitleManager.cs" />
+    <Compile Include="Assets\Scripts\Title\TitleMenuUI.cs" />
     <Compile Include="Assets\Scripts\Tools\CsvReader.cs" />
     <Compile Include="Assets\Scripts\Tools\UnitAppearer.cs" />
     <Compile Include="Assets\Scripts\Tools\UnitAppearFactory.cs" />
     <Compile Include="Assets\Scripts\Tower\FireTowerMover.cs" />
     <Compile Include="Assets\Scripts\Tower\ITowerMover.cs" />
+    <Compile Include="Assets\Scripts\Tower\NormalTowerMover.cs" />
     <Compile Include="Assets\Scripts\Tower\ThunderTowerMover.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerController.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerManager.cs" />
@@ -112,9 +122,11 @@
     <Compile Include="Assets\Scripts\UI\NextEnemy.cs" />
     <Compile Include="Assets\Scripts\UI\NowLevelViewer.cs" />
     <Compile Include="Assets\Scripts\UI\PowerLevelUpper.cs" />
+    <Compile Include="Assets\Scripts\UI\RequiredExp.cs" />
     <Compile Include="Assets\Scripts\UI\ShowExperience.cs" />
     <Compile Include="Assets\Scripts\UI\SwitchPause.cs" />
     <Compile Include="Assets\Scripts\UI\TotalLevelUpper.cs" />
+    <Compile Include="Assets\Scripts\UI\TowerRequiredExp.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\WaveManager.cs" />
     <Compile Include="Assets\wani.cs" />
