@@ -99,6 +99,7 @@ MonoBehaviour:
   sound: {fileID: 0}
   volume: 0
   hitEffect: {fileID: 0}
+  bulletType: 3
 --- !u!50 &1861115222
 Rigidbody2D:
   serializedVersion: 4

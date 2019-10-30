@@ -100,7 +100,7 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: abff9cd97c8906a43b1ce5a0328a0dbd, type: 3}
   volume: 0.3
   hitEffect: {fileID: 0}
-  ratio: 0.8
+  bulletType: 1
 --- !u!50 &4036623577208398850
 Rigidbody2D:
   serializedVersion: 4
