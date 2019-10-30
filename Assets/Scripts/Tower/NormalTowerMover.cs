@@ -17,7 +17,7 @@ public class NormalTowerMover : ITowerMover
 
     private double time;
 
-    private float range = 250;
+    private float range = 300;
     private float power_ratio = 1.5f;
     private float interval_ratio = 0.9f;
 
