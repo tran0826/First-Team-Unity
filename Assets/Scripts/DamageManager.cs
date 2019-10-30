@@ -72,15 +72,16 @@ public class DamageManager : MonoBehaviour
         if (enemyBulletCoList.Count == 0) return;
         foreach (EnemyBulletPair pair in enemyBulletCoList)
         {
-            int bulletPower = pair.bullet.Power;
+            int bulletPower = pair.bullet.RangePower(pair.enemy);
 
             DisplayHitEffect(pair.bullet.transform.position);
             if (pair.bullet.CanDestroyOnCollision)
             {
                 destroyManager.AddDestroyList(pair.bullet.gameObject);
             }
+
             pair.enemy.HitBullet(bulletPower);
-            
+
             if (pair.enemy.Hp <= 0)
             {
                 GameManager.Instance.playerManager.Experience += pair.enemy.Experience;
