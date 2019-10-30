@@ -98,7 +98,8 @@ MonoBehaviour:
   speed: 1500
   sound: {fileID: 0}
   volume: 0
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 3854812545313116867, guid: ed67a57e8c54b4d43b5191f7bedbd19b,
+    type: 3}
   bulletType: 3
 --- !u!50 &1861115222
 Rigidbody2D:
