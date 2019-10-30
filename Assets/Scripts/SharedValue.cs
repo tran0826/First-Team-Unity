@@ -85,5 +85,6 @@ public enum Scene
     Game,
     Manual,
     GameOver,
-    GameClear
+    GameClear,
+    Exit
 }
