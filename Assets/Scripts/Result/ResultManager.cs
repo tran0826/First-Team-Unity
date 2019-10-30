@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Tools;
 
 public class ResultManager : MonoBehaviour
 {
     private static ResultManager instance;
 
     private double fadeoutTime = 0;
+
+    private List<int> score;
 
 
     public static ResultManager Instance
@@ -36,6 +39,14 @@ public class ResultManager : MonoBehaviour
     virtual protected void Awake()
     {
         CheckInstance();
+        CSVWriter file = new CSVWriter();
+        score = file.LogLoad("score");
+        score.Sort((a, b) => b - a);
+        for(int i = 0; i < 5; i++)
+        {
+            score.Add(0);
+        }
+        
     }
 
     protected bool CheckInstance()
@@ -79,5 +90,10 @@ public class ResultManager : MonoBehaviour
             }
             fadeoutTime += timeManager.PauseDeltaTime();
         }
+    }
+
+    public int GetScore(int rank)
+    {
+        return score[rank];
     }
 }

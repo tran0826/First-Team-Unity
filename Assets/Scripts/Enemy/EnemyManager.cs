@@ -7,7 +7,7 @@ public class EnemyManager : MonoBehaviour
     private HashSet<GameObject> EnemyUnits = new HashSet<GameObject>();
     private Queue<GameObject> bornQueue = new Queue<GameObject>();
     private Queue<GameObject> deadQueue = new Queue<GameObject>();
-
+    
     public void Born(List<GameObject> borns)
     {
         foreach (var born in borns)

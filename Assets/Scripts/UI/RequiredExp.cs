@@ -38,7 +38,9 @@ public class RequiredExp : MonoBehaviour
         }
         else
         {
-            text.text = Define.PLAYER_LEVEL_UP_TABLE[nowLevel].ToString();
+            int exp = Define.PLAYER_LEVEL_UP_TABLE[nowLevel];
+            if (levelType == LevelType.Total) exp *= 2;
+            text.text = exp.ToString();
         }
 
 

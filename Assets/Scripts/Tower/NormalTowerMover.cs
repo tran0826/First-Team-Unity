@@ -46,7 +46,7 @@ public class NormalTowerMover : ITowerMover
         if (time >= interval)
         {
             CreateBullet();
-            time -= interval;
+            time = 0;
         }
         RotateTower();
         float r = 6.0f * (float)GameManager.Instance.timeManager.DeltaTime();

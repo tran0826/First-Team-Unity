@@ -45,7 +45,8 @@ public class ThunderTowerMover : ITowerMover
         if (time >= interval)
         {
             CreateBullet();
-            time -= interval;
+            time =0;
+            Debug.Log(time);
         }
         RotateTower();
         float r = 6.0f * (float)GameManager.Instance.timeManager.DeltaTime();
@@ -120,5 +121,6 @@ public class ThunderTowerMover : ITowerMover
             * (Define.MAX_POWER - Define.MIN_POWER) * power_ratio) + Define.MIN_POWER;
         interval = (float)(Define.MAX_PLAYER_LEVEL - GameManager.Instance.sharedValue.IntervalLevel) / (float)Define.MAX_PLAYER_LEVEL
             * (Define.MAX_INTERVAL - Define.MIN_INTERVAL) * interval_ratio + Define.MIN_INTERVAL;
+        Debug.Log(interval);
     }
 }

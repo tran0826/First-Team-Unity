@@ -16,6 +16,8 @@ public class WaveManager : MonoBehaviour
 
     private bool isStartWave = false;
 
+    public int countEnemy = 0;
+
     public void StartWave(WaveParameter waveParameter)
     {
         currentUnitAppearer = UnitAppearFactory.CreateFromConfiguration(appearRoot, waveParameter.WaveConfiguration);
@@ -33,6 +35,8 @@ public class WaveManager : MonoBehaviour
                 foreach(EnemyController child in childlen)
                 {
                     GameManager.Instance.enemyManager.Born(child.gameObject);
+                    countEnemy++;
+                    
                 }
             }
         }
@@ -54,6 +58,11 @@ public class WaveManager : MonoBehaviour
         {
             
             if (GameManager.Instance.enemyManager.CountEnemy()!=0)
+            {
+  //              return false;
+            }
+
+            if (countEnemy != 0)
             {
                 return false;
             }
