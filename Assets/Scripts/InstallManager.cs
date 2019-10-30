@@ -20,13 +20,13 @@ public class InstallManager : MonoBehaviour
     private List<MapTile> installList = new List<MapTile>();
 
     [SerializeField]
-    private Texture2D cursorFire;
+    private List<Texture2D> cursorFire;
     [SerializeField]
-    private Texture2D cursorWater;
+    private List<Texture2D> cursorWater;
     [SerializeField]
-    private Texture2D cursorThunder;
+    private List<Texture2D> cursorThunder;
     [SerializeField]
-    private Texture2D cursorNormal;
+    private List<Texture2D> cursorNormal;
 
     [SerializeField]
     private AudioClip summon;
@@ -123,16 +123,20 @@ public class InstallManager : MonoBehaviour
     {
         if (installType == TowerType.Fire)
         {
-            Cursor.SetCursor(cursorFire, new Vector2(cursorFire.width / 2, cursorFire.height / 2), CursorMode.ForceSoftware);
+            int level = GameManager.Instance.sharedValue.FireLevel;
+            Cursor.SetCursor(cursorFire[level], new Vector2(cursorFire[level].width / 2, cursorFire[level].height / 2), CursorMode.ForceSoftware);
         }else if (installType == TowerType.Thunder)
         {
-            Cursor.SetCursor(cursorThunder, new Vector2(cursorThunder.width / 2, cursorThunder.height / 2), CursorMode.ForceSoftware);
+            int level = GameManager.Instance.sharedValue.ThunderLevel;
+            Cursor.SetCursor(cursorThunder[level], new Vector2(cursorThunder[level].width / 2, cursorThunder[level].height / 2), CursorMode.ForceSoftware);
         }else if (installType == TowerType.Water)
         {
-            Cursor.SetCursor(cursorWater, new Vector2(cursorWater.width / 2, cursorWater.height / 2), CursorMode.ForceSoftware);
+            int level = GameManager.Instance.sharedValue.WaterLevel;
+            Cursor.SetCursor(cursorWater[level], new Vector2(cursorWater[level].width / 2, cursorWater[level].height / 2), CursorMode.ForceSoftware);
         }else if (installType == TowerType.Normal)
         {
-            Cursor.SetCursor(cursorNormal, new Vector2(cursorNormal.width / 2, cursorNormal.height / 2), CursorMode.ForceSoftware);
+            int level = GameManager.Instance.sharedValue.NormalLevel;
+            Cursor.SetCursor(cursorNormal[level], new Vector2(cursorNormal[level].width / 2, cursorNormal[level].height / 2), CursorMode.ForceSoftware);
         }
     }
 
