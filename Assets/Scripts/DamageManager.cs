@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using UnityEngine;
+using Tools;
 
 public class DamageManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class DamageManager : MonoBehaviour
     private AudioClip playerDamageVoice;
     [SerializeField]
     private AudioClip gameOver;
+    [SerializeField]
+    private AudioClip victory;
 
 
     private void Awake()
@@ -87,10 +90,14 @@ public class DamageManager : MonoBehaviour
             {
                 if (pair.enemy.isBoss == true)
                 {
+                    GameManager.Instance.GetComponent<AudioSource>().PlayOneShot(victory);
+                    EnemyDead(pair.enemy);
                     GameClear();
+                    break;
                 }
                 GameManager.Instance.playerManager.Experience += pair.enemy.Experience;
                 EnemyDead(pair.enemy);
+                
             }
             
         }
@@ -116,6 +123,7 @@ public class DamageManager : MonoBehaviour
     {
         enemyManager.Kill(enemy.gameObject);
         destroyManager.AddDestroyList(enemy.gameObject);
+        GameManager.Instance.waveManager.countEnemy--;
     }
 
     private void DisplayHitEffect(Vector3 pos)
@@ -128,10 +136,31 @@ public class DamageManager : MonoBehaviour
         GameManager.Instance.timeManager.Pause();
         GameManager.Instance.sharedValue.TransFlag = true;
         GameManager.Instance.sharedValue.NextScene = Scene.GameClear;
-        float score = GameManager.Instance.sharedValue.Hp * GameManager.Instance.playerManager.Experience;
+        int score = (int)GameManager.Instance.sharedValue.Hp * GameManager.Instance.playerManager.Experience;
 
-
-        File.AppendAllText("score", score.ToString());
+        CSVWriter file = new CSVWriter();
+        List<int> temp = new List<int>();
+        temp.Add(score);
+        file.LogSave(temp, "score");
+        /*
+        var scores = file.LogLoad("score");
+        if (scores != null)
+        {
+            foreach(int i in scores)
+            {
+                Debug.Log("i");
+            }
+            scores.Add(score);
+            file.LogSave(scores, "score");
+        }
+        else
+        {
+            List<int> temp = new List<int>();
+            temp.Add(score);
+            file.LogSave(temp, "score");
+        }
+        
+       */
     }
 
 }

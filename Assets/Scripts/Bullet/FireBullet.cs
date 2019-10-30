@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireBullet : BulletBase
 {
     private CapsuleCollider2D bulletCollider;
-    private float[] width= { 100,150,200};
+    private float[] width= { 150,200,300};
 
 
     public override void Initialize(int power)

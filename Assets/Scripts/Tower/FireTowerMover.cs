@@ -19,7 +19,7 @@ public class FireTowerMover : ITowerMover
 
     private float range=250;
 
-    private float power_ratio = 1.0f;
+    private float power_ratio = 1f;
     private float interval_ratio = 1.0f;
 
     BulletType bulletType = BulletType.Fire;
@@ -46,7 +46,7 @@ public class FireTowerMover : ITowerMover
         if (time >= interval)
         {
             CreateBullet();
-            time -= interval;
+            time = 0;
         }
         RotateTower();
         float r = 6.0f * (float)GameManager.Instance.timeManager.DeltaTime();

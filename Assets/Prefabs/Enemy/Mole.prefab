@@ -138,9 +138,10 @@ MonoBehaviour:
   moveType: 0
   speed: 150
   minSpeed: 100
-  hp: 50
+  hp: 3
   experience: 1
-  power: 5
+  power: 1
+  isBoss: 0
 --- !u!60 &4453900409870215956
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +152,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
