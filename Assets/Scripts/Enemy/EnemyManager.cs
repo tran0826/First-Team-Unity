@@ -71,7 +71,7 @@ public class EnemyManager : MonoBehaviour
 
     public GameObject NearestEnemy(GameObject tower,float range)
     {
-        float nearest = range;
+        float nearest = range*range;
         GameObject nearEnemy = null;
 
         Vector3 towerPos = tower.transform.position;
@@ -82,7 +82,7 @@ public class EnemyManager : MonoBehaviour
             {
                 if (enemy == null) continue;
                 Vector3 distVec = towerPos - enemy.transform.position;
-                float dist = distVec.magnitude;
+                float dist = distVec.sqrMagnitude;
                 if (nearest > dist)
                 {
                     nearest = dist;
