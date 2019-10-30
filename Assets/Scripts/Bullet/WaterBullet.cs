@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class WaterBullet : BulletBase
 {
-    [SerializeField] private float ratio=0.8f;
+    private float[] speed_ratio= { 0.9f ,0.8f, 0.7f};
     public override void Initialize(int power)
     {
         this.Power = power;
+        this.bulletType = BulletType.Water;
     }
     public override void Move()
     {
@@ -21,7 +22,8 @@ public class WaterBullet : BulletBase
         var enemy = collider.gameObject.GetComponent<EnemyController>();
         if (enemy != null)
         {
-            enemy.SpeedDown(ratio);
+            nowLevel=GameManager.Instance.sharedValue.ThunderLevel;
+            enemy.SpeedDown(speed_ratio[nowLevel]);
             GameManager.Instance.collisionManager.CollisionBulletToEnemy(enemy, this);
             return;
         }

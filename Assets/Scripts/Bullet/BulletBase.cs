@@ -10,6 +10,7 @@ public abstract class BulletBase : MonoBehaviour
     protected float speed;
     protected Vector3 direction;
     private Renderer bulletRenderer;
+    protected int nowLevel = 0;
 
     private AudioSource audioSource;
     [SerializeField] private AudioClip sound;
@@ -19,6 +20,8 @@ public abstract class BulletBase : MonoBehaviour
     public int Power { get { return power; } protected set { power = value; } }
 
     public virtual bool CanDestroyOnCollision { get; protected set; } = true;
+
+    public BulletType bulletType;
 
     void Awake()
     {
@@ -38,6 +41,10 @@ public abstract class BulletBase : MonoBehaviour
         
     }
     public abstract void Initialize(int power);
+
+    public virtual int RangePower(EnemyController enemy) {
+        return this.Power;
+    }
 
     public virtual void OnTriggerEnter2D(Collider2D collider)
     {

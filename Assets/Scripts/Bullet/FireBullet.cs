@@ -5,12 +5,13 @@ using UnityEngine;
 public class FireBullet : BulletBase
 {
     private CapsuleCollider2D bulletCollider;
-    [SerializeField] private float width=100;
+    private float[] width= { 100,150,200};
 
 
     public override void Initialize(int power)
     {
         this.Power = power;
+        this.bulletType = BulletType.Fire;
         bulletCollider = GetComponent<CapsuleCollider2D>();
     }
     public override void Move()
@@ -18,6 +19,12 @@ public class FireBullet : BulletBase
         //Debug.Log("Move");
         gameObject.transform.Translate(0, speed * (float)GameManager.Instance.timeManager.DeltaTime(), 0);
     }
+
+    public override int RangePower(EnemyController enemy) {
+        Vector3 distVec = this.transform.position - enemy.transform.position;
+        float dist = distVec.magnitude;
+        return (int)((float)this.Power* (width[nowLevel]-dist) /width[nowLevel]);
+    } 
 
     public override void OnTriggerEnter2D(Collider2D collider)
     {
@@ -28,7 +35,8 @@ public class FireBullet : BulletBase
             //bombSource.Play();
             // 衝突時に衝突判定範囲を拡大する
             //GameManager.Instance.damageManager.CreateBombEffect(width, transform.position);
-            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, width, Vector2.up, 0f);
+            nowLevel = GameManager.Instance.sharedValue.FireLevel;
+            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, width[nowLevel], Vector2.up, 0f);
             //Debug.Log("fireBullet:"+hits.Length);
             for (int i = 0; i < hits.Length; i++)
             {
