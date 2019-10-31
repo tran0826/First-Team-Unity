@@ -408,7 +408,6 @@ MonoBehaviour:
   normal: {fileID: 21300000, guid: d470f4433461a464f9cd35a1d6e858dc, type: 3}
   summon: {fileID: 21300000, guid: fd412d18cc0635c41bbfe4cc1f005f1c, type: 3}
   damaged: {fileID: 21300000, guid: bece72c3c7f5eb14e9e5897ffa263640, type: 3}
-  summonEffect: {fileID: 0}
 --- !u!1 &440818376
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +618,7 @@ PrefabInstance:
     - target: {fileID: 6700450184411652567, guid: 60e0fe1545a41254a994e695ba34d50b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6700450184411652561, guid: 60e0fe1545a41254a994e695ba34d50b,
         type: 3}
@@ -1178,6 +1177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appearRoot: {fileID: 1975306859}
+  countEnemy: 0
 --- !u!114 &1552947351
 MonoBehaviour:
   m_ObjectHideFlags: 0

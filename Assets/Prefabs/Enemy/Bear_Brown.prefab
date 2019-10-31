@@ -137,10 +137,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveType: 0
   speed: 150
-  minSpeed: 5
-  hp: 50
-  experience: 1
-  power: 5
+  minSpeed: 70
+  hp: 30
+  experience: 6
+  power: 3
+  isBoss: 0
 --- !u!60 &6789754393263846325
 PolygonCollider2D:
   m_ObjectHideFlags: 0

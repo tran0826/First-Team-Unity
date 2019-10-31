@@ -56,17 +56,13 @@ public class WaveManager : MonoBehaviour
         
         if (currentUnitAppearer.IsAllAppeared)
         {
-            
-            if (GameManager.Instance.enemyManager.CountEnemy()!=0)
-            {
-  //              return false;
-            }
+            if (countEnemy < 0) countEnemy = 0;
 
             if (countEnemy != 0)
             {
-                return false;
+                 return false;
             }
-            else
+            else if (GameManager.Instance.enemyManager.CountEnemy() == 0)
             {
                 isStartWave = false;
                 return true;

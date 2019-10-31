@@ -123,7 +123,7 @@ public class DamageManager : MonoBehaviour
     {
         enemyManager.Kill(enemy.gameObject);
         destroyManager.AddDestroyList(enemy.gameObject);
-        GameManager.Instance.waveManager.countEnemy--;
+        
     }
 
     private void DisplayHitEffect(Vector3 pos)

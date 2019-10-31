@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4437851366760102026}
   m_Layer: 0
-  m_Name: SecondWave
+  m_Name: 2wave_alli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -927,31 +927,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341260961572687540, guid: 395bec08c49fbba44acf313bfc85d351,
-        type: 3}
-      propertyPath: speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341260961572687540, guid: 395bec08c49fbba44acf313bfc85d351,
-        type: 3}
-      propertyPath: minSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341260961572687540, guid: 395bec08c49fbba44acf313bfc85d351,
-        type: 3}
-      propertyPath: hp
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341260961572687540, guid: 395bec08c49fbba44acf313bfc85d351,
-        type: 3}
-      propertyPath: experience
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341260961572687540, guid: 395bec08c49fbba44acf313bfc85d351,
-        type: 3}
-      propertyPath: power
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 395bec08c49fbba44acf313bfc85d351, type: 3}

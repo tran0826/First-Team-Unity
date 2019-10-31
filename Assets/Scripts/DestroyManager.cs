@@ -34,6 +34,11 @@ public class DestroyManager : MonoBehaviour
         {
             if (obj != null)
             {
+                var enemy = obj.GetComponent<EnemyController>();
+                if (enemy != null)
+                {
+                    GameManager.Instance.waveManager.countEnemy--;
+                }
                 Destroy(obj);
             }
         }

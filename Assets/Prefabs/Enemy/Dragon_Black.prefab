@@ -96,11 +96,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveType: 0
-  speed: 100
-  minSpeed: 5
-  hp: 1000
-  experience: 1
+  speed: 180
+  minSpeed: 50
+  hp: 800
+  experience: 35
   power: 10
+  isBoss: 0
 --- !u!50 &6211943583552283983
 Rigidbody2D:
   serializedVersion: 4

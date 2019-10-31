@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveType: 0
-  speed: 100
-  minSpeed: 5
-  hp: 1000
+  speed: 150
+  minSpeed: 80
+  hp: 4500
   experience: 1
   power: 1000
   isBoss: 1
