@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7721363a70bb21438ead8559c14371d, type: 3}
-  m_Name: Wave3
+  m_Name: Wave5
   m_EditorClassIdentifier: 
   appearConfigurations:
-  - appearEnemyGroup: {fileID: 9143956799517742919, guid: 3f7734c6bfebb3949aa42360fbc33f04,
+  - appearEnemyGroup: {fileID: 4163629673885750593, guid: 9c57dc1fbd3de3d49b07394b3037013f,
       type: 3}
     appearTime: 0.1

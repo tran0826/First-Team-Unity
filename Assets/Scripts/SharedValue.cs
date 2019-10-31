@@ -30,7 +30,7 @@ namespace Common
         public const int MAX_LEVEL = 2;
         public const int MAX_PLAYER_LEVEL = 29;
 
-        public static readonly int[] LEVEL_UP_TABLE = new int[2] { 50, 50 };
+        public static readonly int[] LEVEL_UP_TABLE = new int[2] { 50, 100 };
         public static readonly int[] PLAYER_LEVEL_UP_TABLE = new int[29]
             {10,12,14,16,18,
              20,22,24,26,28,
