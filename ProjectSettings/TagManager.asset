@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CanExistErea
   layers:
   - Default
   - TransparentFX
@@ -16,13 +17,13 @@ TagManager:
   - 
   - 
   - 
+  - Enemy
   - 
+  - Tower
   - 
+  - Bullet
   - 
-  - 
-  - 
-  - 
-  - 
+  - Map
   - 
   - 
   - 
