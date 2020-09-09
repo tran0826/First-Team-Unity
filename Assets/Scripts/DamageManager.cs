@@ -137,11 +137,12 @@ public class DamageManager : MonoBehaviour
         GameManager.Instance.sharedValue.TransFlag = true;
         GameManager.Instance.sharedValue.NextScene = Scene.GameClear;
         int score = (int)GameManager.Instance.sharedValue.Hp * GameManager.Instance.playerManager.Experience;
-
+/*
         CSVWriter file = new CSVWriter();
         List<int> temp = new List<int>();
         temp.Add(score);
         file.LogSave(temp, "score");
+*/
         /*
         var scores = file.LogLoad("score");
         if (scores != null)
