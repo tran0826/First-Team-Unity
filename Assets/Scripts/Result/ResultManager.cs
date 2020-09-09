@@ -11,7 +11,7 @@ public class ResultManager : MonoBehaviour
 
     private double fadeoutTime = 0;
 
-    private List<int> score;
+    private List<string[]> score;
 
 
     public static ResultManager Instance
@@ -39,12 +39,14 @@ public class ResultManager : MonoBehaviour
     virtual protected void Awake()
     {
         CheckInstance();
-        CSVWriter file = new CSVWriter();
-        score = file.LogLoad("score");
-        score.Sort((a, b) => b - a);
+        CsvReader csvReader = new CsvReader();
+        score = csvReader.ReadFile("score");
+ //       CSVWriter file = new CSVWriter();
+ //       score = file.LogLoad("score");
+ //       score.Sort((a, b) => b - a);
         for(int i = 0; i < 5; i++)
         {
-            score.Add(0);
+ //           score.Add(0);
         }
         
     }
@@ -92,8 +94,8 @@ public class ResultManager : MonoBehaviour
         }
     }
 
-    public int GetScore(int rank)
+    public string GetScore(int rank)
     {
-        return score[rank];
+        return score[0][rank];
     }
 }
